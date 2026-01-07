@@ -10,6 +10,7 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useWishlistStore } from "@/lib/store/wishlist-store";
+import { useQuickViewStore } from "@/lib/store/quick-view-store";
 import { toast } from "sonner";
 import {
   Tooltip,
@@ -26,6 +27,7 @@ interface ProductCardProps {
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const addItem = useCartStore((state) => state.addItem);
   const { addItem: addToWishlist, removeItem: removeFromWishlist, isInWishlist } = useWishlistStore();
+  const openQuickView = useQuickViewStore((state) => state.openQuickView);
   const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = (e: React.MouseEvent) => {
@@ -94,15 +96,18 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Link href={`/products/${product.slug}`}>
-                      <Button
-                        variant="secondary"
-                        size="icon"
-                        className="h-8 w-8 shadow-md"
-                      >
-                        <Eye className="h-4 w-4" />
-                      </Button>
-                    </Link>
+                    <Button
+                      variant="secondary"
+                      size="icon"
+                      className="h-8 w-8 shadow-md"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        openQuickView(product);
+                      }}
+                    >
+                      <Eye className="h-4 w-4" />
+                    </Button>
                   </TooltipTrigger>
                   <TooltipContent side="left">
                     <p>Quick View</p>
