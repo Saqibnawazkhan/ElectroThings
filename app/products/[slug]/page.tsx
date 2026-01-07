@@ -23,6 +23,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ProductGrid } from "@/components/products/product-grid";
 import { ProductImageGallery } from "@/components/products/product-image-gallery";
+import { ProductReviews } from "@/components/products/product-reviews";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -256,10 +257,11 @@ export default function ProductPage() {
           )}
         </TabsContent>
         <TabsContent value="reviews" className="mt-6">
-          <p className="text-muted-foreground">
-            Reviews feature coming soon. This product has {product.reviewCount}{" "}
-            reviews with an average rating of {product.rating} stars.
-          </p>
+          <ProductReviews
+            productId={product.id}
+            rating={product.rating}
+            reviewCount={product.reviewCount}
+          />
         </TabsContent>
       </Tabs>
 
