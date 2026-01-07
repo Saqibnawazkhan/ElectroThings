@@ -1,0 +1,51 @@
+[
+  {
+    "id": "order-1",
+    "userId": "user-2",
+    "items": [
+      {
+        "productId": "prod-1",
+        "productName": "iPhone 15 Pro Max",
+        "productImage": "/images/products/iphone-15-pro.jpg",
+        "price": 1199,
+        "quantity": 1
+      },
+      {
+        "productId": "prod-10",
+        "productName": "AirPods Pro 2nd Gen",
+        "productImage": "/images/products/airpods-pro-2.jpg",
+        "price": 249,
+        "quantity": 1
+      }
+    ],
+    "shippingAddress": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "address": "123 Main Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipCode": "94102",
+      "country": "United States",
+      "phone": "+1 555-123-4567"
+    },
+    "billingAddress": {
+      "firstName": "Demo",
+      "lastName": "User",
+      "address": "123 Main Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipCode": "94102",
+      "country": "United States",
+      "phone": "+1 555-123-4567"
+    },
+    "subtotal": 1448,
+    "shipping": 0,
+    "tax": 115.84,
+    "total": 1563.84,
+    "status": "delivered",
+    "paymentMethod": "card",
+    "paymentStatus": "paid",
+    "createdAt": "2024-01-20T14:30:00Z",
+    "updatedAt": "2024-01-25T10:00:00Z"
+  }
+]
