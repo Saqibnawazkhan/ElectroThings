@@ -4,6 +4,7 @@ import { ArrowRight, Truck, Shield, Headphones, CreditCard } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProductGrid } from "@/components/products/product-grid";
+import { HeroSection } from "@/components/home/hero-section";
 import { getFeaturedProducts, getCategories } from "@/lib/data";
 
 const features = [
@@ -36,37 +37,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 text-white">
-        <div className="container mx-auto px-4 py-20 lg:py-32">
-          <div className="max-w-2xl">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Discover the Latest in Tech
-            </h1>
-            <p className="text-lg lg:text-xl text-slate-300 mb-8">
-              Shop premium electronics, cutting-edge gadgets, and must-have
-              accessories. Quality products at competitive prices.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/products">
-                <Button size="lg" className="w-full sm:w-auto">
-                  Shop Now
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/categories/electronics">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-slate-900"
-                >
-                  Browse Electronics
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-        <div className="absolute inset-0 bg-[url('/images/hero-pattern.svg')] opacity-10" />
-      </section>
+      <HeroSection />
 
       {/* Features */}
       <section className="border-b">
