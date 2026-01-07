@@ -24,6 +24,7 @@ import { ProductImageGallery } from "@/components/products/product-image-gallery
 import { ProductReviews } from "@/components/products/product-reviews";
 import { ShareProduct } from "@/components/products/share-product";
 import { WishlistButton } from "@/components/products/wishlist-button";
+import { StockNotification } from "@/components/products/stock-notification";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -153,17 +154,24 @@ export default function ProductPage() {
           <p className="text-muted-foreground mb-6">{product.description}</p>
 
           {/* Stock Status */}
-          <div className="flex items-center gap-2 mb-6">
-            {product.stock > 0 ? (
-              <>
-                <Check className="h-5 w-5 text-green-500" />
-                <span className="text-green-600">
-                  In Stock ({product.stock} available)
-                </span>
-              </>
-            ) : (
-              <Badge variant="secondary">Out of Stock</Badge>
-            )}
+          <div className="flex items-center justify-between mb-6">
+            <div className="flex items-center gap-2">
+              {product.stock > 0 ? (
+                <>
+                  <Check className="h-5 w-5 text-green-500" />
+                  <span className="text-green-600">
+                    In Stock ({product.stock} available)
+                  </span>
+                </>
+              ) : (
+                <Badge variant="secondary">Out of Stock</Badge>
+              )}
+            </div>
+            <StockNotification
+              productId={product.id}
+              productName={product.name}
+              stock={product.stock}
+            />
           </div>
 
           <Separator className="my-6" />
