@@ -10,7 +10,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import {
   Table,
@@ -29,17 +28,25 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { getProducts, deleteProduct } from "@/lib/data";
-import { Product } from "@/types";
+import { getProducts, getCategories, deleteProduct, updateProduct, createProduct } from "@/lib/data";
+import { Product, Category } from "@/types";
 import { toast } from "sonner";
+import { ProductEditDialog } from "@/components/admin/product-edit-dialog";
 
 export default function AdminProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [deleteId, setDeleteId] = useState<string | null>(null);
 
+  // Edit dialog state
+  const [editDialogOpen, setEditDialogOpen] = useState(false);
+  const [editingProduct, setEditingProduct] = useState<Product | null>(null);
+  const [dialogMode, setDialogMode] = useState<"edit" | "create">("edit");
+
   useEffect(() => {
     setProducts(getProducts());
+    setCategories(getCategories());
   }, []);
 
   const filteredProducts = products.filter(
@@ -59,6 +66,32 @@ export default function AdminProductsPage() {
     setDeleteId(null);
   };
 
+  const handleEdit = (product: Product) => {
+    setEditingProduct(product);
+    setDialogMode("edit");
+    setEditDialogOpen(true);
+  };
+
+  const handleCreate = () => {
+    setEditingProduct(null);
+    setDialogMode("create");
+    setEditDialogOpen(true);
+  };
+
+  const handleSave = (savedProduct: Product) => {
+    if (dialogMode === "edit") {
+      // Update existing product
+      const updated = updateProduct(savedProduct.id, savedProduct);
+      if (updated) {
+        setProducts(products.map((p) => (p.id === updated.id ? updated : p)));
+      }
+    } else {
+      // Create new product
+      const created = createProduct(savedProduct);
+      setProducts([...products, created]);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
@@ -68,7 +101,7 @@ export default function AdminProductsPage() {
             Manage your product inventory
           </p>
         </div>
-        <Button>
+        <Button onClick={handleCreate}>
           <Plus className="mr-2 h-4 w-4" />
           Add Product
         </Button>
@@ -155,7 +188,11 @@ export default function AdminProductsPage() {
                   </TableCell>
                   <TableCell className="text-right">
                     <div className="flex justify-end gap-2">
-                      <Button variant="ghost" size="icon">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        onClick={() => handleEdit(product)}
+                      >
                         <Pencil className="h-4 w-4" />
                       </Button>
                       <Dialog
@@ -211,6 +248,16 @@ export default function AdminProductsPage() {
           )}
         </CardContent>
       </Card>
+
+      {/* Product Edit/Create Dialog */}
+      <ProductEditDialog
+        product={editingProduct}
+        categories={categories}
+        open={editDialogOpen}
+        onOpenChange={setEditDialogOpen}
+        onSave={handleSave}
+        mode={dialogMode}
+      />
     </div>
   );
 }
