@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
-import { Facebook, Twitter, Instagram, Youtube, Mail } from "lucide-react";
+import { motion } from "framer-motion";
+import { Facebook, Twitter, Instagram, Youtube, Mail, MapPin, Phone, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const footerLinks = {
   shop: [
@@ -38,122 +42,187 @@ const socialLinks = [
   { name: "YouTube", icon: Youtube, href: "#" },
 ];
 
+const contactInfo = [
+  { icon: MapPin, text: "123 Tech Street, Silicon Valley, CA" },
+  { icon: Phone, text: "+1 (555) 123-4567" },
+  { icon: Clock, text: "Mon-Fri: 9AM - 6PM" },
+];
+
 export function Footer() {
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success("Thank you for subscribing!");
+  };
+
   return (
-    <footer className="bg-muted/50 border-t">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+    <footer className="bg-slate-900 text-slate-300">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10">
           {/* Brand & Newsletter */}
-          <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
-              <span className="text-xl font-bold text-primary">ElectroThings</span>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-2"
+          >
+            <Link href="/" className="inline-block mb-6">
+              <span className="text-2xl font-bold text-white">
+                Electro<span className="text-primary">Things</span>
+              </span>
             </Link>
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-slate-400 mb-6 leading-relaxed">
               Your destination for premium electronics and gadgets. Quality products,
-              competitive prices, and exceptional service.
+              competitive prices, and exceptional service since 2024.
             </p>
-            <div className="space-y-2">
-              <p className="text-sm font-medium">Subscribe to our newsletter</p>
-              <form className="flex gap-2">
+
+            {/* Contact Info */}
+            <div className="space-y-3 mb-6">
+              {contactInfo.map((item, index) => (
+                <div key={index} className="flex items-center gap-3 text-sm">
+                  <item.icon className="h-4 w-4 text-primary" />
+                  <span>{item.text}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Newsletter */}
+            <div className="space-y-3">
+              <p className="text-white font-medium">Subscribe to our newsletter</p>
+              <form onSubmit={handleSubscribe} className="flex gap-2">
                 <Input
                   type="email"
                   placeholder="Enter your email"
-                  className="max-w-[200px]"
+                  className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 focus:border-primary"
+                  required
                 />
-                <Button type="submit" size="sm">
+                <Button type="submit" className="shrink-0">
                   <Mail className="h-4 w-4" />
                 </Button>
               </form>
             </div>
-          </div>
+          </motion.div>
 
           {/* Shop Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Shop</h3>
-            <ul className="space-y-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <h3 className="text-white font-semibold mb-4">Shop</h3>
+            <ul className="space-y-3">
               {footerLinks.shop.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Support Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Support</h3>
-            <ul className="space-y-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <h3 className="text-white font-semibold mb-4">Support</h3>
+            <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Company Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Company</h3>
-            <ul className="space-y-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <h3 className="text-white font-semibold mb-4">Company</h3>
+            <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Legal Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
-            <ul className="space-y-2">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="text-sm text-slate-400 hover:text-primary transition-colors inline-flex items-center gap-1 group"
                   >
+                    <span className="w-0 group-hover:w-2 h-px bg-primary transition-all duration-300" />
                     {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} ElectroThings. All rights reserved.
-          </p>
+      {/* Bottom Bar */}
+      <div className="border-t border-slate-800">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-slate-500">
+              &copy; {new Date().getFullYear()} ElectroThings. All rights reserved.
+            </p>
 
-          {/* Social Links */}
-          <div className="flex items-center space-x-4">
-            {socialLinks.map((social) => (
-              <Link
-                key={social.name}
-                href={social.href}
-                className="text-muted-foreground hover:text-primary transition-colors"
-                aria-label={social.name}
-              >
-                <social.icon className="h-5 w-5" />
-              </Link>
-            ))}
+            {/* Social Links */}
+            <div className="flex items-center space-x-4">
+              {socialLinks.map((social) => (
+                <motion.div
+                  key={social.name}
+                  whileHover={{ scale: 1.2 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <Link
+                    href={social.href}
+                    className="flex items-center justify-center w-10 h-10 rounded-full bg-slate-800 text-slate-400 hover:bg-primary hover:text-white transition-colors"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-4 w-4" />
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
