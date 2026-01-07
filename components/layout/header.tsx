@@ -8,7 +8,6 @@ import {
   User,
   Menu,
   X,
-  Search,
   ChevronDown,
   LogOut,
   Package,
@@ -16,7 +15,7 @@ import {
   Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { SearchBar } from "@/components/search/search-bar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -28,7 +27,6 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useWishlistStore } from "@/lib/store/wishlist-store";
-import { useRouter } from "next/navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 const categories = [
@@ -41,24 +39,14 @@ const categories = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [mounted, setMounted] = useState(false);
   const { data: session } = useSession();
   const cartItemCount = useCartStore((state) => state.getItemCount());
   const wishlistItemCount = useWishlistStore((state) => state.getItemCount());
-  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/products?search=${encodeURIComponent(searchQuery.trim())}`);
-      setSearchQuery("");
-    }
-  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -96,21 +84,7 @@ export function Header() {
           </nav>
 
           {/* Search Bar */}
-          <form
-            onSubmit={handleSearch}
-            className="hidden md:flex flex-1 max-w-md mx-6"
-          >
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder="Search products..."
-                className="pl-10 w-full"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-              />
-            </div>
-          </form>
+          <SearchBar className="hidden md:block flex-1 max-w-md mx-6" />
 
           {/* Right Actions */}
           <div className="flex items-center space-x-2">
@@ -218,18 +192,7 @@ export function Header() {
               <SheetContent side="right" className="w-[300px]">
                 <div className="flex flex-col space-y-4 mt-6">
                   {/* Mobile Search */}
-                  <form onSubmit={handleSearch}>
-                    <div className="relative">
-                      <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-                      <Input
-                        type="search"
-                        placeholder="Search products..."
-                        className="pl-10"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
-                    </div>
-                  </form>
+                  <SearchBar onClose={() => setIsOpen(false)} />
 
                   <div className="border-t pt-4">
                     <Link
