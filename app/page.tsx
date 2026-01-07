@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/home/hero-section";
 import { FeaturesSection } from "@/components/home/features-section";
 import { CategoriesSection } from "@/components/home/categories-section";
 import { FeaturedProductsSection } from "@/components/home/featured-products-section";
+import { RecentlyViewed } from "@/components/products/recently-viewed";
 import { CTASection } from "@/components/home/cta-section";
 import { getFeaturedProducts, getCategories } from "@/lib/data";
 
@@ -22,6 +23,9 @@ export default function HomePage() {
 
       {/* Featured Products */}
       <FeaturedProductsSection products={featuredProducts} />
+
+      {/* Recently Viewed */}
+      <RecentlyViewed />
 
       {/* CTA Banner */}
       <CTASection />

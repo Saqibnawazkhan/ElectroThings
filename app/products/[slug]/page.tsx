@@ -23,6 +23,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ProductGrid } from "@/components/products/product-grid";
 import { useCartStore } from "@/lib/store/cart-store";
+import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
 import { Product } from "@/types";
 import { toast } from "sonner";
@@ -35,15 +36,18 @@ export default function ProductPage() {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const addItem = useCartStore((state) => state.addItem);
+  const addToRecentlyViewed = useRecentlyViewedStore((state) => state.addItem);
 
   useEffect(() => {
     const prod = getProductBySlug(slug);
     if (prod) {
       setProduct(prod);
       setRelatedProducts(getRelatedProducts(prod));
+      // Track as recently viewed
+      addToRecentlyViewed(prod);
     }
     setLoading(false);
-  }, [slug]);
+  }, [slug, addToRecentlyViewed]);
 
   if (loading) {
     return (
