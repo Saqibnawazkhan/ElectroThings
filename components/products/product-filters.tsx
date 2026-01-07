@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
-import { SlidersHorizontal } from "lucide-react";
+import { useCallback, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { SlidersHorizontal, X, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -11,8 +12,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 import {
   Sheet,
   SheetContent,
@@ -20,15 +23,36 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Category } from "@/types";
 
 interface ProductFiltersProps {
   categories: Category[];
 }
 
+const MAX_PRICE = 2000;
+
 export function ProductFilters({ categories }: ProductFiltersProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
+  const [priceRange, setPriceRange] = useState([0, MAX_PRICE]);
+
+  const currentCategory = searchParams.get("category") || "";
+  const currentSort = searchParams.get("sortBy") || "";
+  const currentMinPrice = searchParams.get("minPrice") || "";
+  const currentMaxPrice = searchParams.get("maxPrice") || "";
+
+  // Sync price range with URL params
+  useEffect(() => {
+    const min = currentMinPrice ? parseInt(currentMinPrice) : 0;
+    const max = currentMaxPrice ? parseInt(currentMaxPrice) : MAX_PRICE;
+    setPriceRange([min, max]);
+  }, [currentMinPrice, currentMaxPrice]);
 
   const createQueryString = useCallback(
     (params: Record<string, string | null>) => {
@@ -52,93 +76,152 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
     router.push(`/products${queryString ? `?${queryString}` : ""}`);
   };
 
-  const clearFilters = () => {
-    router.push("/products");
+  const updatePriceRange = (values: number[]) => {
+    setPriceRange(values);
   };
 
-  const currentCategory = searchParams.get("category") || "";
-  const currentSort = searchParams.get("sortBy") || "";
-  const currentMinPrice = searchParams.get("minPrice") || "";
-  const currentMaxPrice = searchParams.get("maxPrice") || "";
+  const applyPriceRange = () => {
+    const queryString = createQueryString({
+      minPrice: priceRange[0] > 0 ? priceRange[0].toString() : null,
+      maxPrice: priceRange[1] < MAX_PRICE ? priceRange[1].toString() : null,
+    });
+    router.push(`/products${queryString ? `?${queryString}` : ""}`);
+  };
+
+  const clearFilters = () => {
+    setPriceRange([0, MAX_PRICE]);
+    router.push("/products");
+  };
 
   const hasActiveFilters =
     currentCategory || currentSort || currentMinPrice || currentMaxPrice;
 
+  const activeFilterCount = [
+    currentCategory,
+    currentSort,
+    currentMinPrice || currentMaxPrice,
+  ].filter(Boolean).length;
+
   const FilterContent = () => (
     <div className="space-y-6">
-      {/* Category Filter */}
-      <div className="space-y-2">
-        <Label>Category</Label>
-        <Select
-          value={currentCategory}
-          onValueChange={(value) =>
-            updateFilter("category", value === "all" ? null : value)
-          }
-        >
-          <SelectTrigger>
-            <SelectValue placeholder="All Categories" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">All Categories</SelectItem>
-            {categories.map((category) => (
-              <SelectItem key={category.slug} value={category.slug}>
-                {category.name}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Sort Filter */}
-      <div className="space-y-2">
-        <Label>Sort By</Label>
-        <Select
-          value={currentSort}
-          onValueChange={(value) =>
-            updateFilter("sortBy", value === "default" ? null : value)
-          }
-        >
-          <SelectTrigger>
-            <SelectValue placeholder="Default" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="default">Default</SelectItem>
-            <SelectItem value="price-asc">Price: Low to High</SelectItem>
-            <SelectItem value="price-desc">Price: High to Low</SelectItem>
-            <SelectItem value="name">Name</SelectItem>
-            <SelectItem value="rating">Rating</SelectItem>
-            <SelectItem value="newest">Newest</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
-
-      {/* Price Range */}
-      <div className="space-y-2">
-        <Label>Price Range</Label>
-        <div className="flex gap-2">
-          <Input
-            type="number"
-            placeholder="Min"
-            value={currentMinPrice}
-            onChange={(e) => updateFilter("minPrice", e.target.value || null)}
-            className="w-full"
-          />
-          <Input
-            type="number"
-            placeholder="Max"
-            value={currentMaxPrice}
-            onChange={(e) => updateFilter("maxPrice", e.target.value || null)}
-            className="w-full"
-          />
-        </div>
-      </div>
-
-      {/* Clear Filters */}
+      {/* Active Filters */}
       {hasActiveFilters && (
-        <Button variant="outline" onClick={clearFilters} className="w-full">
-          Clear Filters
-        </Button>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          className="space-y-2"
+        >
+          <div className="flex items-center justify-between">
+            <Label className="text-muted-foreground">Active Filters</Label>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={clearFilters}
+              className="h-auto py-1 px-2 text-xs"
+            >
+              Clear All
+            </Button>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {currentCategory && (
+              <Badge variant="secondary" className="gap-1">
+                {categories.find((c) => c.slug === currentCategory)?.name}
+                <X
+                  className="h-3 w-3 cursor-pointer"
+                  onClick={() => updateFilter("category", null)}
+                />
+              </Badge>
+            )}
+            {(currentMinPrice || currentMaxPrice) && (
+              <Badge variant="secondary" className="gap-1">
+                ${currentMinPrice || 0} - ${currentMaxPrice || MAX_PRICE}
+                <X
+                  className="h-3 w-3 cursor-pointer"
+                  onClick={() => {
+                    setPriceRange([0, MAX_PRICE]);
+                    const queryString = createQueryString({
+                      minPrice: null,
+                      maxPrice: null,
+                    });
+                    router.push(`/products${queryString ? `?${queryString}` : ""}`);
+                  }}
+                />
+              </Badge>
+            )}
+          </div>
+          <Separator />
+        </motion.div>
       )}
+
+      <Accordion type="multiple" defaultValue={["category", "price"]} className="w-full">
+        {/* Category Filter */}
+        <AccordionItem value="category">
+          <AccordionTrigger className="py-3">
+            <div className="flex items-center gap-2">
+              <Tag className="h-4 w-4" />
+              Category
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="space-y-2 pt-2">
+              <Button
+                variant={!currentCategory ? "secondary" : "ghost"}
+                className="w-full justify-start"
+                onClick={() => updateFilter("category", null)}
+              >
+                All Categories
+              </Button>
+              {categories.map((category) => (
+                <Button
+                  key={category.slug}
+                  variant={currentCategory === category.slug ? "secondary" : "ghost"}
+                  className="w-full justify-between"
+                  onClick={() => updateFilter("category", category.slug)}
+                >
+                  {category.name}
+                  <span className="text-muted-foreground text-xs">
+                    {category.productCount}
+                  </span>
+                </Button>
+              ))}
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+
+        {/* Price Range */}
+        <AccordionItem value="price">
+          <AccordionTrigger className="py-3">
+            <div className="flex items-center gap-2">
+              <SlidersHorizontal className="h-4 w-4" />
+              Price Range
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            <div className="space-y-4 pt-2 px-1">
+              <Slider
+                value={priceRange}
+                onValueChange={updatePriceRange}
+                max={MAX_PRICE}
+                step={10}
+                className="w-full"
+              />
+              <div className="flex items-center justify-between text-sm">
+                <span className="font-medium">${priceRange[0]}</span>
+                <span className="text-muted-foreground">to</span>
+                <span className="font-medium">${priceRange[1]}</span>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                className="w-full"
+                onClick={applyPriceRange}
+              >
+                Apply Price Filter
+              </Button>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
     </div>
   );
 
@@ -147,7 +230,12 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
       {/* Desktop Filters */}
       <div className="hidden lg:block w-64 shrink-0">
         <div className="sticky top-20">
-          <h2 className="text-lg font-semibold mb-4">Filters</h2>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-lg font-semibold">Filters</h2>
+            {hasActiveFilters && (
+              <Badge variant="secondary">{activeFilterCount}</Badge>
+            )}
+          </div>
           <FilterContent />
         </div>
       </div>
@@ -160,9 +248,9 @@ export function ProductFilters({ categories }: ProductFiltersProps) {
               <SlidersHorizontal className="mr-2 h-4 w-4" />
               Filters
               {hasActiveFilters && (
-                <span className="ml-2 rounded-full bg-primary px-2 py-0.5 text-xs text-primary-foreground">
-                  Active
-                </span>
+                <Badge variant="secondary" className="ml-2">
+                  {activeFilterCount}
+                </Badge>
               )}
             </Button>
           </SheetTrigger>
