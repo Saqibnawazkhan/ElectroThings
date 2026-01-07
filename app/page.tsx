@@ -1,34 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Truck, Shield, Headphones, CreditCard } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ProductGrid } from "@/components/products/product-grid";
 import { HeroSection } from "@/components/home/hero-section";
+import { FeaturesSection } from "@/components/home/features-section";
 import { getFeaturedProducts, getCategories } from "@/lib/data";
-
-const features = [
-  {
-    icon: Truck,
-    title: "Free Shipping",
-    description: "On orders over $100",
-  },
-  {
-    icon: Shield,
-    title: "Secure Payment",
-    description: "100% secure checkout",
-  },
-  {
-    icon: Headphones,
-    title: "24/7 Support",
-    description: "Ready to help anytime",
-  },
-  {
-    icon: CreditCard,
-    title: "Easy Returns",
-    description: "30-day return policy",
-  },
-];
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
@@ -40,26 +18,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Features */}
-      <section className="border-b">
-        <div className="container mx-auto px-4 py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature) => (
-              <div
-                key={feature.title}
-                className="flex items-center gap-3 p-4"
-              >
-                <feature.icon className="h-8 w-8 text-primary shrink-0" />
-                <div>
-                  <h3 className="font-semibold">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground">
-                    {feature.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection />
 
       {/* Categories */}
       <section className="py-12 lg:py-16">
