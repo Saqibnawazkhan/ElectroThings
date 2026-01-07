@@ -8,7 +8,6 @@ import {
   Star,
   ShoppingCart,
   Heart,
-  Share2,
   Minus,
   Plus,
   Check,
@@ -24,6 +23,7 @@ import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ProductGrid } from "@/components/products/product-grid";
 import { ProductImageGallery } from "@/components/products/product-image-gallery";
 import { ProductReviews } from "@/components/products/product-reviews";
+import { ShareProduct } from "@/components/products/share-product";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -208,10 +208,10 @@ export default function ProductPage() {
               <Heart className="mr-2 h-4 w-4" />
               Add to Wishlist
             </Button>
-            <Button variant="outline" size="sm">
-              <Share2 className="mr-2 h-4 w-4" />
-              Share
-            </Button>
+            <ShareProduct
+              productName={product.name}
+              productSlug={product.slug}
+            />
           </div>
 
           {/* Shipping Info */}
