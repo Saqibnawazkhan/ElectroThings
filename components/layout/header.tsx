@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useSession, signOut } from "next-auth/react";
 import {
-  ShoppingCart,
   User,
   Menu,
   X,
@@ -25,9 +24,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
-import { useCartStore } from "@/lib/store/cart-store";
 import { useWishlistStore } from "@/lib/store/wishlist-store";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { CartDropdown } from "@/components/cart/cart-dropdown";
 
 const categories = [
   { name: "Electronics", slug: "electronics" },
@@ -41,7 +40,6 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { data: session } = useSession();
-  const cartItemCount = useCartStore((state) => state.getItemCount());
   const wishlistItemCount = useWishlistStore((state) => state.getItemCount());
 
   useEffect(() => {
@@ -106,20 +104,8 @@ export function Header() {
               </Button>
             </Link>
 
-            {/* Cart */}
-            <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
-                {mounted && cartItemCount > 0 && (
-                  <Badge
-                    variant="destructive"
-                    className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
-                  >
-                    {cartItemCount}
-                  </Badge>
-                )}
-              </Button>
-            </Link>
+            {/* Cart Dropdown */}
+            <CartDropdown />
 
             {/* User Menu */}
             {session ? (
