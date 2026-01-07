@@ -26,6 +26,7 @@ import { ShareProduct } from "@/components/products/share-product";
 import { WishlistButton } from "@/components/products/wishlist-button";
 import { StockNotification } from "@/components/products/stock-notification";
 import { VariantSelector, mockVariants } from "@/components/products/variant-selector";
+import { ProductQA } from "@/components/products/product-qa";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -249,6 +250,7 @@ export default function ProductPage() {
         <TabsList>
           <TabsTrigger value="specifications">Specifications</TabsTrigger>
           <TabsTrigger value="reviews">Reviews</TabsTrigger>
+          <TabsTrigger value="qa">Q&A</TabsTrigger>
         </TabsList>
         <TabsContent value="specifications" className="mt-6">
           {product.specifications ? (
@@ -275,6 +277,9 @@ export default function ProductPage() {
             rating={product.rating}
             reviewCount={product.reviewCount}
           />
+        </TabsContent>
+        <TabsContent value="qa" className="mt-6">
+          <ProductQA productId={product.id} />
         </TabsContent>
       </Tabs>
 
