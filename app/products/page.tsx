@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { ProductGrid } from "@/components/products/product-grid";
 import { ProductFilters } from "@/components/products/product-filters";
 import { ProductSortBar } from "@/components/products/product-sort-bar";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { getProducts, getCategories } from "@/lib/data";
 import { ProductFilters as Filters } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -61,6 +62,7 @@ export default async function ProductsPage(props: ProductsPageProps) {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <Breadcrumbs items={[{ label: "Products", href: "/products" }]} />
       <h1 className="text-3xl font-bold mb-8">All Products</h1>
 
       <div className="flex flex-col lg:flex-row gap-8">

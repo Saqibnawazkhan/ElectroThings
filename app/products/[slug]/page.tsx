@@ -9,7 +9,6 @@ import {
   ShoppingCart,
   Heart,
   Share2,
-  ChevronRight,
   Minus,
   Plus,
   Check,
@@ -21,6 +20,7 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ProductGrid } from "@/components/products/product-grid";
 import { useCartStore } from "@/lib/store/cart-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -89,24 +89,13 @@ export default function ProductPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-        <Link href="/" className="hover:text-primary">
-          Home
-        </Link>
-        <ChevronRight className="h-4 w-4" />
-        <Link href="/products" className="hover:text-primary">
-          Products
-        </Link>
-        <ChevronRight className="h-4 w-4" />
-        <Link
-          href={`/categories/${product.categorySlug}`}
-          className="hover:text-primary"
-        >
-          {product.category}
-        </Link>
-        <ChevronRight className="h-4 w-4" />
-        <span className="text-foreground">{product.name}</span>
-      </nav>
+      <Breadcrumbs
+        items={[
+          { label: "Products", href: "/products" },
+          { label: product.category, href: `/categories/${product.categorySlug}` },
+          { label: product.name, href: `/products/${product.slug}` },
+        ]}
+      />
 
       {/* Product Details */}
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
