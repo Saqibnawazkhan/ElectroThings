@@ -22,6 +22,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Breadcrumbs } from "@/components/ui/breadcrumbs";
 import { ProductGrid } from "@/components/products/product-grid";
+import { ProductImageGallery } from "@/components/products/product-image-gallery";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -103,22 +104,12 @@ export default function ProductPage() {
 
       {/* Product Details */}
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-        {/* Product Image */}
-        <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
-          <Image
-            src={product.images[0] || "/images/placeholder.svg"}
-            alt={product.name}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          {discount > 0 && (
-            <Badge className="absolute top-4 left-4" variant="destructive">
-              -{discount}% OFF
-            </Badge>
-          )}
-        </div>
+        {/* Product Image Gallery */}
+        <ProductImageGallery
+          images={product.images}
+          productName={product.name}
+          discount={discount}
+        />
 
         {/* Product Info */}
         <div>
