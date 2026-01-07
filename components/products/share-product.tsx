@@ -105,7 +105,7 @@ export function ShareProduct({ productName, productSlug }: ShareProductProps) {
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h4 className="font-semibold">Share this product</h4>
-            {typeof navigator !== "undefined" && navigator.share && (
+            {typeof navigator !== "undefined" && typeof navigator.share === "function" && (
               <Button
                 variant="ghost"
                 size="sm"
