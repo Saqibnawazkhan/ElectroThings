@@ -19,6 +19,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { ProductCardBadge } from "@/components/products/product-badges";
 
 interface ProductCardProps {
   product: Product;
@@ -152,11 +153,22 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
               </TooltipProvider>
             </div>
 
-            {discount > 0 && (
-              <Badge className="absolute top-2 left-2 animate-pulse" variant="destructive">
-                -{discount}%
-              </Badge>
-            )}
+            {/* Top-left badges */}
+            <div className="absolute top-2 left-2 flex flex-col gap-1">
+              {discount > 0 && (
+                <Badge className="animate-pulse" variant="destructive">
+                  -{discount}%
+                </Badge>
+              )}
+              <ProductCardBadge
+                productId={product.id}
+                rating={product.rating}
+                reviewCount={product.reviewCount}
+                stock={product.stock}
+              />
+            </div>
+
+            {/* Bottom-left stock badges */}
             {product.stock < 10 && product.stock > 0 && (
               <Badge className="absolute bottom-2 left-2" variant="secondary">
                 Only {product.stock} left
