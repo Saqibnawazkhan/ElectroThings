@@ -13,6 +13,7 @@ import {
   LogOut,
   Package,
   LayoutDashboard,
+  Heart,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,6 +27,7 @@ import {
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/lib/store/cart-store";
+import { useWishlistStore } from "@/lib/store/wishlist-store";
 import { useRouter } from "next/navigation";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -42,7 +44,8 @@ export function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const [mounted, setMounted] = useState(false);
   const { data: session } = useSession();
-  const itemCount = useCartStore((state) => state.getItemCount());
+  const cartItemCount = useCartStore((state) => state.getItemCount());
+  const wishlistItemCount = useWishlistStore((state) => state.getItemCount());
   const router = useRouter();
 
   useEffect(() => {
@@ -114,16 +117,31 @@ export function Header() {
             {/* Theme Toggle */}
             <ThemeToggle />
 
+            {/* Wishlist */}
+            <Link href="/wishlist">
+              <Button variant="ghost" size="icon" className="relative">
+                <Heart className="h-5 w-5" />
+                {mounted && wishlistItemCount > 0 && (
+                  <Badge
+                    variant="secondary"
+                    className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                  >
+                    {wishlistItemCount}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
+
             {/* Cart */}
             <Link href="/cart">
               <Button variant="ghost" size="icon" className="relative">
                 <ShoppingCart className="h-5 w-5" />
-                {mounted && itemCount > 0 && (
+                {mounted && cartItemCount > 0 && (
                   <Badge
                     variant="destructive"
                     className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
                   >
-                    {itemCount}
+                    {cartItemCount}
                   </Badge>
                 )}
               </Button>
