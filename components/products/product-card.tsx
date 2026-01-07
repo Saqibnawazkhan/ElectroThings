@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShoppingCart, Star, Heart, Eye } from "lucide-react";
+import { ShoppingCart, Star, Heart, Eye, GitCompare } from "lucide-react";
 import { Product } from "@/types";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useWishlistStore } from "@/lib/store/wishlist-store";
 import { useQuickViewStore } from "@/lib/store/quick-view-store";
+import { useCompareStore } from "@/lib/store/compare-store";
 import { toast } from "sonner";
 import {
   Tooltip,
@@ -28,7 +29,9 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const addItem = useCartStore((state) => state.addItem);
   const { addItem: addToWishlist, removeItem: removeFromWishlist, isInWishlist } = useWishlistStore();
   const openQuickView = useQuickViewStore((state) => state.openQuickView);
+  const { addItem: addToCompare, removeItem: removeFromCompare, isInCompare, canAdd } = useCompareStore();
   const inWishlist = isInWishlist(product.id);
+  const inCompare = isInCompare(product.id);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -46,6 +49,22 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
     } else {
       addToWishlist(product);
       toast.success("Added to wishlist");
+    }
+  };
+
+  const handleCompare = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (inCompare) {
+      removeFromCompare(product.id);
+      toast.success("Removed from comparison");
+    } else {
+      if (!canAdd()) {
+        toast.error("You can compare up to 4 products");
+        return;
+      }
+      addToCompare(product);
+      toast.success("Added to comparison");
     }
   };
 
@@ -111,6 +130,23 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                   </TooltipTrigger>
                   <TooltipContent side="left">
                     <p>Quick View</p>
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>
+              <TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button
+                      variant={inCompare ? "default" : "secondary"}
+                      size="icon"
+                      className="h-8 w-8 shadow-md"
+                      onClick={handleCompare}
+                    >
+                      <GitCompare className="h-4 w-4" />
+                    </Button>
+                  </TooltipTrigger>
+                  <TooltipContent side="left">
+                    <p>{inCompare ? "Remove from Compare" : "Add to Compare"}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
