@@ -7,7 +7,6 @@ import { useParams } from "next/navigation";
 import {
   Star,
   ShoppingCart,
-  Heart,
   Minus,
   Plus,
   Check,
@@ -24,6 +23,7 @@ import { ProductGrid } from "@/components/products/product-grid";
 import { ProductImageGallery } from "@/components/products/product-image-gallery";
 import { ProductReviews } from "@/components/products/product-reviews";
 import { ShareProduct } from "@/components/products/share-product";
+import { WishlistButton } from "@/components/products/wishlist-button";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -204,10 +204,7 @@ export default function ProductPage() {
 
           {/* Actions */}
           <div className="flex gap-4 mb-6">
-            <Button variant="outline" size="sm">
-              <Heart className="mr-2 h-4 w-4" />
-              Add to Wishlist
-            </Button>
+            <WishlistButton product={product} />
             <ShareProduct
               productName={product.name}
               productSlug={product.slug}
