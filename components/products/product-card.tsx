@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useCartStore } from "@/lib/store/cart-store";
+import { useWishlistStore } from "@/lib/store/wishlist-store";
 import { toast } from "sonner";
 import {
   Tooltip,
@@ -24,6 +25,8 @@ interface ProductCardProps {
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const addItem = useCartStore((state) => state.addItem);
+  const { addItem: addToWishlist, removeItem: removeFromWishlist, isInWishlist } = useWishlistStore();
+  const inWishlist = isInWishlist(product.id);
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -35,7 +38,13 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
   const handleWishlist = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    toast.success("Added to wishlist");
+    if (inWishlist) {
+      removeFromWishlist(product.id);
+      toast.success("Removed from wishlist");
+    } else {
+      addToWishlist(product);
+      toast.success("Added to wishlist");
+    }
   };
 
   const discount = product.originalPrice
@@ -69,16 +78,16 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button
-                      variant="secondary"
+                      variant={inWishlist ? "default" : "secondary"}
                       size="icon"
                       className="h-8 w-8 shadow-md"
                       onClick={handleWishlist}
                     >
-                      <Heart className="h-4 w-4" />
+                      <Heart className={`h-4 w-4 ${inWishlist ? "fill-current" : ""}`} />
                     </Button>
                   </TooltipTrigger>
                   <TooltipContent side="left">
-                    <p>Add to Wishlist</p>
+                    <p>{inWishlist ? "Remove from Wishlist" : "Add to Wishlist"}</p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
