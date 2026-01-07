@@ -27,6 +27,7 @@ import { WishlistButton } from "@/components/products/wishlist-button";
 import { StockNotification } from "@/components/products/stock-notification";
 import { VariantSelector, mockVariants } from "@/components/products/variant-selector";
 import { ProductQA } from "@/components/products/product-qa";
+import { ProductCarousel } from "@/components/products/product-carousel";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -286,8 +287,10 @@ export default function ProductPage() {
       {/* Related Products */}
       {relatedProducts.length > 0 && (
         <section className="mt-16">
-          <h2 className="text-2xl font-bold mb-8">Related Products</h2>
-          <ProductGrid products={relatedProducts} />
+          <ProductCarousel
+            title="Related Products"
+            products={relatedProducts}
+          />
         </section>
       )}
     </div>
