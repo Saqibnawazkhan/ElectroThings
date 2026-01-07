@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { ProductGrid } from "@/components/products/product-grid";
 import { ProductFilters } from "@/components/products/product-filters";
+import { ProductSortBar } from "@/components/products/product-sort-bar";
 import { getProducts, getCategories } from "@/lib/data";
 import { ProductFilters as Filters } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -49,10 +50,7 @@ async function ProductList({ searchParams }: ProductsPageProps) {
 
   return (
     <div>
-      <p className="text-muted-foreground mb-6">
-        {products.length} product{products.length !== 1 ? "s" : ""} found
-        {params.search && ` for "${params.search}"`}
-      </p>
+      <ProductSortBar productCount={products.length} searchTerm={params.search} />
       <ProductGrid products={products} />
     </div>
   );
