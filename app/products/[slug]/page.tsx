@@ -25,6 +25,7 @@ import { ProductReviews } from "@/components/products/product-reviews";
 import { ShareProduct } from "@/components/products/share-product";
 import { WishlistButton } from "@/components/products/wishlist-button";
 import { StockNotification } from "@/components/products/stock-notification";
+import { VariantSelector, mockVariants } from "@/components/products/variant-selector";
 import { useCartStore } from "@/lib/store/cart-store";
 import { useRecentlyViewedStore } from "@/lib/store/recently-viewed-store";
 import { getProductBySlug, getRelatedProducts } from "@/lib/data";
@@ -175,6 +176,13 @@ export default function ProductPage() {
           </div>
 
           <Separator className="my-6" />
+
+          {/* Variant Selector (for electronics category) */}
+          {(product.categorySlug === "electronics" || product.categorySlug === "audio") && (
+            <div className="mb-6">
+              <VariantSelector variantGroups={mockVariants} />
+            </div>
+          )}
 
           {/* Quantity & Add to Cart */}
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
