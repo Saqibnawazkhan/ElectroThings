@@ -32,7 +32,7 @@ export function AnimatedBackground({
 }: AnimatedBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [particles, setParticles] = useState<Particle[]>([]);
-  const animationRef = useRef<number>();
+  const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const canvas = canvasRef.current;
