@@ -9,6 +9,8 @@ import { DealsSection } from "@/components/home/deals-section";
 import { Testimonials3D } from "@/components/home/testimonials-3d";
 import { Newsletter3D } from "@/components/home/newsletter-3d";
 import { BrandPartners3D } from "@/components/home/brand-partners-3d";
+import { Features3D } from "@/components/home/features-3d";
+import { FAQ3D } from "@/components/home/faq-3d";
 import { getFeaturedProducts, getCategories, getProducts } from "@/lib/data";
 
 export default function HomePage() {
@@ -43,11 +45,17 @@ export default function HomePage() {
       {/* Featured Products with 3D Cards */}
       <FeaturedProductsSection products={allProducts.slice(0, 12)} />
 
+      {/* Features/Benefits */}
+      <Features3D />
+
       {/* Testimonials */}
       <Testimonials3D />
 
       {/* Recently Viewed */}
       <RecentlyViewed />
+
+      {/* FAQ Section */}
+      <FAQ3D />
 
       {/* Newsletter */}
       <Newsletter3D />
