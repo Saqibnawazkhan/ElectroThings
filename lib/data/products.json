@@ -6,7 +6,9 @@
     "description": "The most advanced iPhone ever with A17 Pro chip, titanium design, and a powerful 48MP camera system. Features Dynamic Island and always-on display.",
     "price": 1199,
     "originalPrice": 1299,
-    "images": ["/images/products/iphone-15-pro.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 50,
@@ -27,7 +29,9 @@
     "slug": "samsung-galaxy-s24-ultra",
     "description": "Galaxy AI is here. The ultimate smartphone experience with built-in S Pen, 200MP camera, and Galaxy AI features for enhanced productivity.",
     "price": 1299,
-    "images": ["/images/products/galaxy-s24-ultra.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 35,
@@ -49,7 +53,9 @@
     "description": "Supercharged by M3 Pro chip. The most advanced MacBook Pro ever for demanding workflows like video editing and software development.",
     "price": 1999,
     "originalPrice": 2199,
-    "images": ["/images/products/macbook-pro-14.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 20,
@@ -70,7 +76,9 @@
     "slug": "ipad-pro-12-9-m2",
     "description": "The ultimate iPad experience with M2 chip, stunning Liquid Retina XDR display, and Apple Pencil hover feature.",
     "price": 1099,
-    "images": ["/images/products/ipad-pro.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 30,
@@ -91,7 +99,9 @@
     "slug": "dell-xps-15",
     "description": "Premium 15.6-inch laptop with InfinityEdge display, Intel Core i7, and NVIDIA GeForce RTX graphics.",
     "price": 1499,
-    "images": ["/images/products/dell-xps-15.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 25,
@@ -112,7 +122,9 @@
     "slug": "google-pixel-8-pro",
     "description": "The best of Google AI in a smartphone. Features Tensor G3 chip, Magic Eraser, and 7 years of OS updates.",
     "price": 999,
-    "images": ["/images/products/pixel-8-pro.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 40,
@@ -133,7 +145,9 @@
     "slug": "surface-pro-9",
     "description": "The most powerful Surface Pro. 2-in-1 laptop and tablet with Intel or Microsoft SQ3 processor options.",
     "price": 1099,
-    "images": ["/images/products/surface-pro-9.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 15,
@@ -154,7 +168,9 @@
     "slug": "oneplus-12",
     "description": "Flagship killer with Snapdragon 8 Gen 3, Hasselblad cameras, and 100W SUPERVOOC charging.",
     "price": 799,
-    "images": ["/images/products/oneplus-12.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 45,
@@ -176,7 +192,9 @@
     "description": "Industry-leading noise cancellation headphones with exceptional sound quality and 30-hour battery life.",
     "price": 349,
     "originalPrice": 399,
-    "images": ["/images/products/sony-wh1000xm5.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 60,
@@ -197,7 +215,9 @@
     "slug": "airpods-pro-2nd-gen",
     "description": "Rebuilt from the ground up. Active Noise Cancellation, Adaptive Audio, and up to 2x more noise cancellation than the original.",
     "price": 249,
-    "images": ["/images/products/airpods-pro-2.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 100,
@@ -218,7 +238,9 @@
     "slug": "bose-quietcomfort-ultra",
     "description": "World-class noise cancellation meets immersive audio. CustomTune technology personalized to your ears.",
     "price": 429,
-    "images": ["/images/products/bose-qc-ultra.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 40,
@@ -239,7 +261,9 @@
     "slug": "sonos-era-300",
     "description": "Premium smart speaker with spatial audio and Dolby Atmos support. Fill any room with stunning sound.",
     "price": 449,
-    "images": ["/images/products/sonos-era-300.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 25,
@@ -261,7 +285,9 @@
     "description": "Portable Bluetooth speaker with powerful sound and IP67 waterproof rating. 12 hours of playtime.",
     "price": 129,
     "originalPrice": 149,
-    "images": ["/images/products/jbl-flip-6.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 80,
@@ -282,7 +308,9 @@
     "slug": "playstation-5",
     "description": "Experience lightning-fast loading, haptic feedback, adaptive triggers, and stunning 4K gaming.",
     "price": 499,
-    "images": ["/images/products/ps5.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 10,
@@ -303,7 +331,9 @@
     "slug": "xbox-series-x",
     "description": "The fastest, most powerful Xbox ever. 12 teraflops of processing power and 4K gaming at 60fps.",
     "price": 499,
-    "images": ["/images/products/xbox-series-x.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 15,
@@ -324,7 +354,9 @@
     "slug": "nintendo-switch-oled",
     "description": "Enhanced gaming with vibrant 7-inch OLED screen, wide adjustable stand, and 64GB internal storage.",
     "price": 349,
-    "images": ["/images/products/switch-oled.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 35,
@@ -345,7 +377,9 @@
     "slug": "dualsense-edge-controller",
     "description": "Ultra-customizable PlayStation controller with replaceable components and back buttons.",
     "price": 199,
-    "images": ["/images/products/dualsense-edge.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1592840331295-fac0f1e8e3db?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 20,
@@ -366,7 +400,9 @@
     "slug": "apple-watch-ultra-2",
     "description": "The most rugged and capable Apple Watch. Built for athletes, adventurers, and explorers.",
     "price": 799,
-    "images": ["/images/products/apple-watch-ultra-2.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80"
+    ],
     "category": "Wearables",
     "categorySlug": "wearables",
     "stock": 30,
@@ -387,7 +423,9 @@
     "slug": "samsung-galaxy-watch-6-classic",
     "description": "Premium smartwatch with rotating bezel, advanced health monitoring, and Wear OS.",
     "price": 429,
-    "images": ["/images/products/galaxy-watch-6.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&q=80"
+    ],
     "category": "Wearables",
     "categorySlug": "wearables",
     "stock": 40,
@@ -409,7 +447,9 @@
     "description": "Advanced fitness tracker with built-in GPS, heart rate monitoring, and 7-day battery life.",
     "price": 159,
     "originalPrice": 179,
-    "images": ["/images/products/fitbit-charge-6.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=800&q=80"
+    ],
     "category": "Wearables",
     "categorySlug": "wearables",
     "stock": 55,
@@ -430,7 +470,9 @@
     "slug": "garmin-fenix-7x-pro",
     "description": "Ultimate multisport GPS smartwatch with solar charging, flashlight, and advanced training features.",
     "price": 899,
-    "images": ["/images/products/garmin-fenix-7x.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&q=80"
+    ],
     "category": "Wearables",
     "categorySlug": "wearables",
     "stock": 12,
@@ -451,7 +493,9 @@
     "slug": "anker-737-power-bank",
     "description": "24,000mAh portable charger with 140W output. Charge laptops and phones simultaneously.",
     "price": 149,
-    "images": ["/images/products/anker-737.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1609592094485-4a42d3610a44?w=800&q=80"
+    ],
     "category": "Accessories",
     "categorySlug": "accessories",
     "stock": 70,
@@ -472,7 +516,9 @@
     "slug": "apple-magsafe-charger",
     "description": "Wireless charger that perfectly aligns with iPhone 12 and later for faster wireless charging.",
     "price": 39,
-    "images": ["/images/products/magsafe-charger.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1591290619762-c58b8de44b9a?w=800&q=80"
+    ],
     "category": "Accessories",
     "categorySlug": "accessories",
     "stock": 150,
@@ -494,7 +540,9 @@
     "description": "Super fast charger for Galaxy phones and tablets. Compact design with folding prongs.",
     "price": 49,
     "originalPrice": 59,
-    "images": ["/images/products/samsung-45w-charger.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1591290619762-c58b8de44b9a?w=800&q=80"
+    ],
     "category": "Accessories",
     "categorySlug": "accessories",
     "stock": 90,
@@ -515,7 +563,9 @@
     "slug": "spigen-tough-armor-case",
     "description": "Military-grade protection for iPhone 15 Pro with kickstand. Dual-layer design for extreme durability.",
     "price": 29,
-    "images": ["/images/products/spigen-case.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80"
+    ],
     "category": "Accessories",
     "categorySlug": "accessories",
     "stock": 200,
@@ -537,7 +587,9 @@
     "description": "Premium mechanical gaming keyboard with RGB underglow, Command Dial, and Green Mechanical Switches.",
     "price": 229,
     "originalPrice": 259,
-    "images": ["/images/products/razer-blackwidow.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 35,
@@ -558,7 +610,9 @@
     "slug": "logitech-gpro-superlight-2",
     "description": "Ultra-lightweight wireless gaming mouse at only 60g. HERO 2 sensor with 32K DPI tracking.",
     "price": 159,
-    "images": ["/images/products/logitech-superlight-2.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 50,
@@ -579,7 +633,9 @@
     "slug": "asus-rog-swift-pg27aqn",
     "description": "27-inch 360Hz IPS gaming monitor with 1ms response time. NVIDIA G-SYNC and HDR600.",
     "price": 999,
-    "images": ["/images/products/asus-rog-monitor.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 15,
@@ -601,7 +657,9 @@
     "description": "Premium wireless gaming headset with active noise cancellation and hot-swappable batteries.",
     "price": 349,
     "originalPrice": 399,
-    "images": ["/images/products/steelseries-arctis.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1599669454699-248893623440?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 28,
@@ -623,7 +681,9 @@
     "description": "Self-lit OLED pixels for perfect blacks. α9 AI Processor Gen6 with Dolby Vision and Dolby Atmos.",
     "price": 1799,
     "originalPrice": 2099,
-    "images": ["/images/products/lg-c3-oled.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 12,
@@ -644,7 +704,9 @@
     "slug": "dji-mini-4-pro",
     "description": "Under 249g drone with 4K/60fps video, omnidirectional obstacle sensing, and 34-min flight time.",
     "price": 759,
-    "images": ["/images/products/dji-mini-4.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 25,
@@ -665,7 +727,9 @@
     "slug": "gopro-hero12-black",
     "description": "Waterproof action camera with 5.3K video, HyperSmooth 6.0 stabilization, and HDR photo/video.",
     "price": 399,
-    "images": ["/images/products/gopro-hero12.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 45,
@@ -686,7 +750,9 @@
     "slug": "kindle-scribe",
     "description": "10.2-inch 300ppi Paperwhite display with included Premium Pen. Read and write like paper.",
     "price": 339,
-    "images": ["/images/products/kindle-scribe.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1592496001020-d31bd830651f?w=800&q=80"
+    ],
     "category": "Electronics",
     "categorySlug": "electronics",
     "stock": 55,
@@ -707,7 +773,9 @@
     "slug": "meta-quest-3",
     "description": "Next-gen mixed reality headset with full-color passthrough and Snapdragon XR2 Gen 2 processor.",
     "price": 499,
-    "images": ["/images/products/meta-quest-3.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=800&q=80"
+    ],
     "category": "Gaming",
     "categorySlug": "gaming",
     "stock": 30,
@@ -728,7 +796,9 @@
     "slug": "sennheiser-momentum-4",
     "description": "Wireless headphones with exceptional sound, adaptive noise cancellation, and 60-hour battery.",
     "price": 379,
-    "images": ["/images/products/sennheiser-momentum-4.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1545127398-14699f92334b?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 35,
@@ -749,7 +819,9 @@
     "slug": "marshall-emberton-ii",
     "description": "Portable Bluetooth speaker with iconic Marshall design. 30+ hours playtime and IP67 rating.",
     "price": 169,
-    "images": ["/images/products/marshall-emberton.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 60,
@@ -770,7 +842,9 @@
     "slug": "oura-ring-gen-3",
     "description": "Smart ring for health tracking. Measures sleep, activity, heart rate, and body temperature.",
     "price": 299,
-    "images": ["/images/products/oura-ring.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80"
+    ],
     "category": "Wearables",
     "categorySlug": "wearables",
     "stock": 40,
@@ -792,7 +866,9 @@
     "description": "Wireless headphones with adaptive ANC, LDAC Hi-Res, and 50-hour battery life.",
     "price": 149,
     "originalPrice": 179,
-    "images": ["/images/products/soundcore-q45.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&q=80"
+    ],
     "category": "Audio",
     "categorySlug": "audio",
     "stock": 70,
@@ -813,7 +889,9 @@
     "slug": "belkin-3in1-magsafe",
     "description": "Wireless charging stand for iPhone, Apple Watch, and AirPods. Fast 15W iPhone charging.",
     "price": 149,
-    "images": ["/images/products/belkin-3in1.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1591290619762-c58b8de44b9a?w=800&q=80"
+    ],
     "category": "Accessories",
     "categorySlug": "accessories",
     "stock": 85,
@@ -835,7 +913,9 @@
     "description": "Universal docking station with 15 ports. Supports dual 4K displays and 96W laptop charging.",
     "price": 379,
     "originalPrice": 429,
-    "images": ["/images/products/tb4-dock.jpg"],
+    "images": [
+      "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=800&q=80"
+    ],
     "category": "Accessories",
     "categorySlug": "accessories",
     "stock": 30,

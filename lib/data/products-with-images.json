@@ -1,0 +1,215 @@
+[
+  {
+    "id": "prod-1",
+    "name": "iPhone 15 Pro Max",
+    "slug": "iphone-15-pro-max",
+    "description": "The most advanced iPhone ever with A17 Pro chip, titanium design, and a powerful 48MP camera system. Features Dynamic Island and always-on display.",
+    "price": 1199,
+    "originalPrice": 1299,
+    "images": ["https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 50,
+    "rating": 4.8,
+    "reviewCount": 324,
+    "featured": true,
+    "specifications": {
+      "Display": "6.7-inch Super Retina XDR",
+      "Chip": "A17 Pro",
+      "Storage": "256GB",
+      "Camera": "48MP Main + 12MP Ultra Wide + 12MP Telephoto"
+    },
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "prod-2",
+    "name": "Samsung Galaxy S24 Ultra",
+    "slug": "samsung-galaxy-s24-ultra",
+    "description": "Galaxy AI is here. The ultimate smartphone experience with built-in S Pen, 200MP camera, and Galaxy AI features for enhanced productivity.",
+    "price": 1299,
+    "images": ["https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 256,
+    "featured": true,
+    "specifications": {
+      "Display": "6.8-inch QHD+ Dynamic AMOLED",
+      "Chip": "Snapdragon 8 Gen 3",
+      "Storage": "256GB",
+      "Camera": "200MP Main + 12MP Ultra Wide + 50MP Telephoto"
+    },
+    "createdAt": "2024-01-20T10:00:00Z"
+  },
+  {
+    "id": "prod-3",
+    "name": "MacBook Pro 14\" M3 Pro",
+    "slug": "macbook-pro-14-m3-pro",
+    "description": "Supercharged by M3 Pro chip. The most advanced MacBook Pro ever for demanding workflows like video editing and software development.",
+    "price": 1999,
+    "originalPrice": 2199,
+    "images": ["https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 20,
+    "rating": 4.9,
+    "reviewCount": 189,
+    "featured": true,
+    "specifications": {
+      "Display": "14.2-inch Liquid Retina XDR",
+      "Chip": "Apple M3 Pro",
+      "Memory": "18GB Unified",
+      "Storage": "512GB SSD"
+    },
+    "createdAt": "2024-01-10T10:00:00Z"
+  },
+  {
+    "id": "prod-4",
+    "name": "iPad Pro 12.9\" M2",
+    "slug": "ipad-pro-12-9-m2",
+    "description": "The ultimate iPad experience with M2 chip, stunning Liquid Retina XDR display, and Apple Pencil hover feature.",
+    "price": 1099,
+    "images": ["https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 30,
+    "rating": 4.8,
+    "reviewCount": 145,
+    "featured": false,
+    "specifications": {
+      "Display": "12.9-inch Liquid Retina XDR",
+      "Chip": "Apple M2",
+      "Storage": "256GB",
+      "Connectivity": "Wi-Fi 6E + 5G"
+    },
+    "createdAt": "2024-01-05T10:00:00Z"
+  },
+  {
+    "id": "prod-5",
+    "name": "Dell XPS 15",
+    "slug": "dell-xps-15",
+    "description": "Premium 15.6-inch laptop with InfinityEdge display, Intel Core i7, and NVIDIA GeForce RTX graphics.",
+    "price": 1499,
+    "images": ["https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 25,
+    "rating": 4.6,
+    "reviewCount": 98,
+    "featured": false,
+    "specifications": {
+      "Display": "15.6-inch OLED 3.5K",
+      "Processor": "Intel Core i7-13700H",
+      "Memory": "16GB DDR5",
+      "Storage": "512GB SSD"
+    },
+    "createdAt": "2024-01-08T10:00:00Z"
+  },
+  {
+    "id": "prod-6",
+    "name": "Google Pixel 8 Pro",
+    "slug": "google-pixel-8-pro",
+    "description": "The best of Google AI in a smartphone. Features Tensor G3 chip, Magic Eraser, and 7 years of OS updates.",
+    "price": 999,
+    "images": ["https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 40,
+    "rating": 4.5,
+    "reviewCount": 167,
+    "featured": false,
+    "specifications": {
+      "Display": "6.7-inch LTPO OLED",
+      "Chip": "Google Tensor G3",
+      "Storage": "128GB",
+      "Camera": "50MP Main + 48MP Ultra Wide + 48MP Telephoto"
+    },
+    "createdAt": "2024-01-12T10:00:00Z"
+  },
+  {
+    "id": "prod-7",
+    "name": "Surface Pro 9",
+    "slug": "surface-pro-9",
+    "description": "The most powerful Surface Pro. 2-in-1 laptop and tablet with Intel or Microsoft SQ3 processor options.",
+    "price": 1099,
+    "images": ["https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 15,
+    "rating": 4.4,
+    "reviewCount": 76,
+    "featured": false,
+    "specifications": {
+      "Display": "13-inch PixelSense",
+      "Processor": "Intel Core i5-1235U",
+      "Memory": "8GB",
+      "Storage": "256GB SSD"
+    },
+    "createdAt": "2024-01-18T10:00:00Z"
+  },
+  {
+    "id": "prod-8",
+    "name": "OnePlus 12",
+    "slug": "oneplus-12",
+    "description": "Flagship killer with Snapdragon 8 Gen 3, Hasselblad cameras, and 100W SUPERVOOC charging.",
+    "price": 799,
+    "images": ["https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&q=80"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 45,
+    "rating": 4.6,
+    "reviewCount": 134,
+    "featured": false,
+    "specifications": {
+      "Display": "6.82-inch LTPO AMOLED",
+      "Chip": "Snapdragon 8 Gen 3",
+      "Storage": "256GB",
+      "Camera": "50MP Main + 48MP Ultra Wide + 64MP Telephoto"
+    },
+    "createdAt": "2024-01-22T10:00:00Z"
+  },
+  {
+    "id": "prod-9",
+    "name": "Sony WH-1000XM5",
+    "slug": "sony-wh-1000xm5",
+    "description": "Industry-leading noise cancellation headphones with exceptional sound quality and 30-hour battery life.",
+    "price": 349,
+    "originalPrice": 399,
+    "images": ["https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500&q=80"],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 60,
+    "rating": 4.8,
+    "reviewCount": 456,
+    "featured": true,
+    "specifications": {
+      "Type": "Over-ear Wireless",
+      "Driver": "30mm",
+      "Battery": "30 hours",
+      "ANC": "Yes, with Auto NC Optimizer"
+    },
+    "createdAt": "2024-01-06T10:00:00Z"
+  },
+  {
+    "id": "prod-10",
+    "name": "AirPods Pro 2nd Gen",
+    "slug": "airpods-pro-2nd-gen",
+    "description": "Rebuilt from the ground up. Active Noise Cancellation, Adaptive Audio, and up to 2x more noise cancellation than the original.",
+    "price": 249,
+    "images": ["https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=500&q=80"],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 100,
+    "rating": 4.7,
+    "reviewCount": 678,
+    "featured": true,
+    "specifications": {
+      "Type": "In-ear True Wireless",
+      "Chip": "H2",
+      "Battery": "6 hours (30 with case)",
+      "ANC": "Yes, 2x more powerful"
+    },
+    "createdAt": "2024-01-03T10:00:00Z"
+  }
+]
