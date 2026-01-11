@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -28,6 +29,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, index = 0 }: ProductCardProps) {
+  const [imageError, setImageError] = useState(false);
   const addItem = useCartStore((state) => state.addItem);
   const { addItem: addToWishlist, removeItem: removeFromWishlist, isInWishlist } = useWishlistStore();
   const openQuickView = useQuickViewStore((state) => state.openQuickView);
@@ -102,13 +104,25 @@ export function ProductCard({ product, index = 0 }: ProductCardProps) {
                 transition={{ duration: 0.4 }}
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <Image
-                  src={product.images[0] || "/images/placeholder.svg"}
-                  alt={product.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-                />
+                {imageError ? (
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted via-muted/50 to-background">
+                    <div className="text-center p-8">
+                      <ShoppingCart className="h-16 w-16 mx-auto text-muted-foreground/40 mb-4" />
+                      <p className="text-sm text-muted-foreground font-medium">{product.name}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <Image
+                    src={product.images[0] || "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80"}
+                    alt={product.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    onError={() => setImageError(true)}
+                    priority={index < 4}
+                    unoptimized
+                  />
+                )}
               </motion.div>
 
               {/* Animated gradient overlay */}
