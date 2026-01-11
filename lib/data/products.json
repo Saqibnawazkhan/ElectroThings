@@ -529,5 +529,325 @@
       "Material": "TPU + Polycarbonate"
     },
     "createdAt": "2024-01-26T10:00:00Z"
+  },
+  {
+    "id": "prod-26",
+    "name": "Razer BlackWidow V4 Pro",
+    "slug": "razer-blackwidow-v4-pro",
+    "description": "Premium mechanical gaming keyboard with RGB underglow, Command Dial, and Green Mechanical Switches.",
+    "price": 229,
+    "originalPrice": 259,
+    "images": ["/images/products/razer-blackwidow.jpg"],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 312,
+    "featured": true,
+    "specifications": {
+      "Switches": "Razer Green Mechanical",
+      "Lighting": "Razer Chroma RGB",
+      "Features": "Command Dial, Media Keys",
+      "Connectivity": "USB-C, USB Passthrough"
+    },
+    "createdAt": "2024-01-27T10:00:00Z"
+  },
+  {
+    "id": "prod-27",
+    "name": "Logitech G Pro X Superlight 2",
+    "slug": "logitech-gpro-superlight-2",
+    "description": "Ultra-lightweight wireless gaming mouse at only 60g. HERO 2 sensor with 32K DPI tracking.",
+    "price": 159,
+    "images": ["/images/products/logitech-superlight-2.jpg"],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 50,
+    "rating": 4.9,
+    "reviewCount": 456,
+    "featured": true,
+    "specifications": {
+      "Sensor": "HERO 2 - 32,000 DPI",
+      "Weight": "60g",
+      "Battery": "95 hours",
+      "Connectivity": "LIGHTSPEED Wireless"
+    },
+    "createdAt": "2024-01-28T10:00:00Z"
+  },
+  {
+    "id": "prod-28",
+    "name": "ASUS ROG Swift PG27AQN",
+    "slug": "asus-rog-swift-pg27aqn",
+    "description": "27-inch 360Hz IPS gaming monitor with 1ms response time. NVIDIA G-SYNC and HDR600.",
+    "price": 999,
+    "images": ["/images/products/asus-rog-monitor.jpg"],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 15,
+    "rating": 4.8,
+    "reviewCount": 178,
+    "featured": false,
+    "specifications": {
+      "Display": "27-inch 1440p IPS",
+      "Refresh Rate": "360Hz",
+      "Response Time": "1ms GTG",
+      "Features": "G-SYNC, HDR600"
+    },
+    "createdAt": "2024-01-29T10:00:00Z"
+  },
+  {
+    "id": "prod-29",
+    "name": "SteelSeries Arctis Nova Pro",
+    "slug": "steelseries-arctis-nova-pro",
+    "description": "Premium wireless gaming headset with active noise cancellation and hot-swappable batteries.",
+    "price": 349,
+    "originalPrice": 399,
+    "images": ["/images/products/steelseries-arctis.jpg"],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 28,
+    "rating": 4.7,
+    "reviewCount": 234,
+    "featured": false,
+    "specifications": {
+      "Driver": "40mm Neodymium",
+      "ANC": "4-mic Hybrid",
+      "Battery": "Hot-swappable, 22hrs each",
+      "Audio": "360° Spatial, Hi-Res"
+    },
+    "createdAt": "2024-01-30T10:00:00Z"
+  },
+  {
+    "id": "prod-30",
+    "name": "LG C3 65\" OLED TV",
+    "slug": "lg-c3-65-oled",
+    "description": "Self-lit OLED pixels for perfect blacks. α9 AI Processor Gen6 with Dolby Vision and Dolby Atmos.",
+    "price": 1799,
+    "originalPrice": 2099,
+    "images": ["/images/products/lg-c3-oled.jpg"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 12,
+    "rating": 4.9,
+    "reviewCount": 567,
+    "featured": true,
+    "specifications": {
+      "Display": "65-inch OLED evo",
+      "Resolution": "4K UHD (3840x2160)",
+      "Processor": "α9 AI Gen6",
+      "Features": "Dolby Vision, G-SYNC, FreeSync"
+    },
+    "createdAt": "2024-02-01T10:00:00Z"
+  },
+  {
+    "id": "prod-31",
+    "name": "DJI Mini 4 Pro",
+    "slug": "dji-mini-4-pro",
+    "description": "Under 249g drone with 4K/60fps video, omnidirectional obstacle sensing, and 34-min flight time.",
+    "price": 759,
+    "images": ["/images/products/dji-mini-4.jpg"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 25,
+    "rating": 4.8,
+    "reviewCount": 345,
+    "featured": true,
+    "specifications": {
+      "Camera": "1/1.3-inch CMOS, 4K/60fps",
+      "Weight": "249g",
+      "Flight Time": "34 minutes",
+      "Range": "20km (FCC)"
+    },
+    "createdAt": "2024-02-02T10:00:00Z"
+  },
+  {
+    "id": "prod-32",
+    "name": "GoPro HERO12 Black",
+    "slug": "gopro-hero12-black",
+    "description": "Waterproof action camera with 5.3K video, HyperSmooth 6.0 stabilization, and HDR photo/video.",
+    "price": 399,
+    "images": ["/images/products/gopro-hero12.jpg"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 45,
+    "rating": 4.6,
+    "reviewCount": 423,
+    "featured": false,
+    "specifications": {
+      "Video": "5.3K60, 4K120",
+      "Waterproof": "33ft (10m)",
+      "Stabilization": "HyperSmooth 6.0",
+      "Features": "HDR, 27MP Photos"
+    },
+    "createdAt": "2024-02-03T10:00:00Z"
+  },
+  {
+    "id": "prod-33",
+    "name": "Kindle Scribe",
+    "slug": "kindle-scribe",
+    "description": "10.2-inch 300ppi Paperwhite display with included Premium Pen. Read and write like paper.",
+    "price": 339,
+    "images": ["/images/products/kindle-scribe.jpg"],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 55,
+    "rating": 4.5,
+    "reviewCount": 289,
+    "featured": false,
+    "specifications": {
+      "Display": "10.2-inch Paperwhite",
+      "Resolution": "300 ppi",
+      "Storage": "16GB",
+      "Pen": "Premium Pen included"
+    },
+    "createdAt": "2024-02-04T10:00:00Z"
+  },
+  {
+    "id": "prod-34",
+    "name": "Meta Quest 3",
+    "slug": "meta-quest-3",
+    "description": "Next-gen mixed reality headset with full-color passthrough and Snapdragon XR2 Gen 2 processor.",
+    "price": 499,
+    "images": ["/images/products/meta-quest-3.jpg"],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 30,
+    "rating": 4.7,
+    "reviewCount": 512,
+    "featured": true,
+    "specifications": {
+      "Display": "2064x2208 per eye LCD",
+      "Processor": "Snapdragon XR2 Gen 2",
+      "Storage": "128GB",
+      "Features": "Mixed Reality, Hand Tracking"
+    },
+    "createdAt": "2024-02-05T10:00:00Z"
+  },
+  {
+    "id": "prod-35",
+    "name": "Sennheiser Momentum 4",
+    "slug": "sennheiser-momentum-4",
+    "description": "Wireless headphones with exceptional sound, adaptive noise cancellation, and 60-hour battery.",
+    "price": 379,
+    "images": ["/images/products/sennheiser-momentum-4.jpg"],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 267,
+    "featured": false,
+    "specifications": {
+      "Driver": "42mm",
+      "Battery": "60 hours",
+      "ANC": "Adaptive",
+      "Codec": "aptX Adaptive, AAC, SBC"
+    },
+    "createdAt": "2024-02-06T10:00:00Z"
+  },
+  {
+    "id": "prod-36",
+    "name": "Marshall Emberton II",
+    "slug": "marshall-emberton-ii",
+    "description": "Portable Bluetooth speaker with iconic Marshall design. 30+ hours playtime and IP67 rating.",
+    "price": 169,
+    "images": ["/images/products/marshall-emberton.jpg"],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 60,
+    "rating": 4.6,
+    "reviewCount": 345,
+    "featured": false,
+    "specifications": {
+      "Type": "Portable Bluetooth",
+      "Battery": "30+ hours",
+      "Waterproof": "IP67",
+      "Driver": "Full-range 10W x2"
+    },
+    "createdAt": "2024-02-07T10:00:00Z"
+  },
+  {
+    "id": "prod-37",
+    "name": "Oura Ring Gen 3",
+    "slug": "oura-ring-gen-3",
+    "description": "Smart ring for health tracking. Measures sleep, activity, heart rate, and body temperature.",
+    "price": 299,
+    "images": ["/images/products/oura-ring.jpg"],
+    "category": "Wearables",
+    "categorySlug": "wearables",
+    "stock": 40,
+    "rating": 4.5,
+    "reviewCount": 234,
+    "featured": false,
+    "specifications": {
+      "Sensors": "Heart rate, Temperature, SpO2",
+      "Battery": "Up to 7 days",
+      "Water Resistance": "100m",
+      "Material": "Titanium"
+    },
+    "createdAt": "2024-02-08T10:00:00Z"
+  },
+  {
+    "id": "prod-38",
+    "name": "Anker Soundcore Space Q45",
+    "slug": "anker-soundcore-space-q45",
+    "description": "Wireless headphones with adaptive ANC, LDAC Hi-Res, and 50-hour battery life.",
+    "price": 149,
+    "originalPrice": 179,
+    "images": ["/images/products/soundcore-q45.jpg"],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 70,
+    "rating": 4.5,
+    "reviewCount": 456,
+    "featured": false,
+    "specifications": {
+      "Driver": "40mm",
+      "Battery": "50 hours (ANC on)",
+      "ANC": "Adaptive",
+      "Codec": "LDAC, AAC, SBC"
+    },
+    "createdAt": "2024-02-09T10:00:00Z"
+  },
+  {
+    "id": "prod-39",
+    "name": "Belkin 3-in-1 MagSafe Charger",
+    "slug": "belkin-3in1-magsafe",
+    "description": "Wireless charging stand for iPhone, Apple Watch, and AirPods. Fast 15W iPhone charging.",
+    "price": 149,
+    "images": ["/images/products/belkin-3in1.jpg"],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 85,
+    "rating": 4.6,
+    "reviewCount": 378,
+    "featured": false,
+    "specifications": {
+      "iPhone Charging": "15W MagSafe",
+      "Watch Charging": "Fast charge compatible",
+      "Compatibility": "iPhone 12+, Apple Watch, AirPods",
+      "Design": "Premium metal + leather"
+    },
+    "createdAt": "2024-02-10T10:00:00Z"
+  },
+  {
+    "id": "prod-40",
+    "name": "Thunderbolt 4 Dock",
+    "slug": "thunderbolt-4-dock",
+    "description": "Universal docking station with 15 ports. Supports dual 4K displays and 96W laptop charging.",
+    "price": 379,
+    "originalPrice": 429,
+    "images": ["/images/products/tb4-dock.jpg"],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 30,
+    "rating": 4.7,
+    "reviewCount": 189,
+    "featured": false,
+    "specifications": {
+      "Ports": "15 total (4x USB-A, 2x TB4, HDMI, SD)",
+      "Display": "Dual 4K @ 60Hz",
+      "Power Delivery": "96W",
+      "Compatibility": "Mac, Windows, Chromebook"
+    },
+    "createdAt": "2024-02-11T10:00:00Z"
   }
 ]
