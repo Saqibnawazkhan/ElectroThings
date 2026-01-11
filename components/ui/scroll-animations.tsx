@@ -257,12 +257,13 @@ export function StaggerFade({ children, className, itemClassName }: StaggerFadeP
       opacity: 1,
       y: 0,
       rotateX: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      },
     },
+  };
+
+  const itemTransition = {
+    type: "spring" as const,
+    stiffness: 100,
+    damping: 15,
   };
 
   return (
@@ -276,7 +277,7 @@ export function StaggerFade({ children, className, itemClassName }: StaggerFadeP
     >
       {Array.isArray(children)
         ? children.map((child, index) => (
-            <motion.div key={index} variants={itemVariants} className={itemClassName}>
+            <motion.div key={index} variants={itemVariants} transition={itemTransition} className={itemClassName}>
               {child}
             </motion.div>
           ))

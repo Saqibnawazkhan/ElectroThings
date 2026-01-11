@@ -3,14 +3,16 @@
 import { forwardRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Check, Loader2, ShoppingCart, Heart, Plus, Minus } from "lucide-react";
 
 // Add to Cart button with animation
-interface AddToCartButtonProps extends Omit<ButtonProps, "children"> {
+interface AddToCartButtonProps {
   onAdd: () => void;
   isAdding?: boolean;
   added?: boolean;
+  className?: string;
+  disabled?: boolean;
 }
 
 export function AddToCartButton({
@@ -239,8 +241,12 @@ export function QuantitySelector({
 }
 
 // Glowing CTA button
-interface GlowButtonProps extends ButtonProps {
+interface GlowButtonProps {
+  children: React.ReactNode;
+  className?: string;
   glowColor?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
 }
 
 export const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
@@ -290,8 +296,12 @@ export const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
 GlowButton.displayName = "GlowButton";
 
 // Bounce button
-interface BounceButtonProps extends ButtonProps {
+interface BounceButtonProps {
+  children: React.ReactNode;
   bounceOnClick?: boolean;
+  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
 }
 
 export function BounceButton({
@@ -383,12 +393,19 @@ export function ExpandingIconButton({
 }
 
 // Ripple effect button
+interface RippleButtonProps {
+  children: React.ReactNode;
+  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
+}
+
 export function RippleButton({
   children,
   className,
   onClick,
   ...props
-}: ButtonProps) {
+}: RippleButtonProps) {
   const [ripples, setRipples] = useState<Array<{ x: number; y: number; id: number }>>([]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {

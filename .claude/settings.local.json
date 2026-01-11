@@ -12,7 +12,8 @@
       "Bash(git remote add:*)",
       "Bash(git push:*)",
       "Bash(npm update:*)",
-      "Bash(node scripts/update-product-images.js:*)"
+      "Bash(node scripts/update-product-images.js:*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
