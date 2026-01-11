@@ -91,7 +91,7 @@ export function Testimonials3D() {
       rotateY: 0,
       transition: {
         duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: "easeOut" as const,
       },
     },
     exit: (direction: number) => ({
@@ -101,6 +101,7 @@ export function Testimonials3D() {
       rotateY: direction > 0 ? -45 : 45,
       transition: {
         duration: 0.4,
+        ease: "easeIn" as const,
       },
     }),
   };
