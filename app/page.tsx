@@ -5,6 +5,10 @@ import { Stats3D } from "@/components/home/stats-3d";
 import { FeaturedProductsSection } from "@/components/home/featured-products-section";
 import { RecentlyViewed } from "@/components/products/recently-viewed";
 import { CTASection } from "@/components/home/cta-section";
+import { DealsSection } from "@/components/home/deals-section";
+import { Testimonials3D } from "@/components/home/testimonials-3d";
+import { Newsletter3D } from "@/components/home/newsletter-3d";
+import { BrandPartners3D } from "@/components/home/brand-partners-3d";
 import { getFeaturedProducts, getCategories, getProducts } from "@/lib/data";
 
 export default function HomePage() {
@@ -17,6 +21,9 @@ export default function HomePage() {
       {/* 3D Hero Section */}
       <Hero3D />
 
+      {/* Brand Partners */}
+      <BrandPartners3D />
+
       {/* 3D Stats Section */}
       <Stats3D />
 
@@ -27,14 +34,23 @@ export default function HomePage() {
         subtitle="Handpicked selection of our best sellers"
       />
 
+      {/* Flash Deals Section */}
+      <DealsSection products={allProducts} />
+
       {/* 3D Categories */}
       <Categories3D categories={categories} />
 
       {/* Featured Products with 3D Cards */}
-      <FeaturedProductsSection products={allProducts.slice(0, 8)} />
+      <FeaturedProductsSection products={allProducts.slice(0, 12)} />
+
+      {/* Testimonials */}
+      <Testimonials3D />
 
       {/* Recently Viewed */}
       <RecentlyViewed />
+
+      {/* Newsletter */}
+      <Newsletter3D />
 
       {/* CTA Banner */}
       <CTASection />
