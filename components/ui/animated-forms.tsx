@@ -35,7 +35,7 @@ export const FloatingInput = forwardRef<HTMLInputElement, FloatingInputProps>(
           {label}
         </motion.label>
 
-        <motion.input
+        <input
           ref={ref}
           {...props}
           onFocus={(e) => {
@@ -46,7 +46,6 @@ export const FloatingInput = forwardRef<HTMLInputElement, FloatingInputProps>(
             setIsFocused(false);
             props.onBlur?.(e);
           }}
-          whileFocus={{ scale: 1.01 }}
           className={cn(
             "w-full h-12 px-3 pt-2 rounded-xl border-2 bg-background transition-all duration-200",
             "focus:outline-none focus:ring-2 focus:ring-primary/20",
@@ -92,7 +91,7 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
           <label className="block text-sm font-medium mb-1.5">{label}</label>
         )}
         <div className="relative">
-          <motion.input
+          <input
             ref={ref}
             type={showPassword ? "text" : "password"}
             {...props}
@@ -104,7 +103,6 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
               setIsFocused(false);
               props.onBlur?.(e);
             }}
-            whileFocus={{ scale: 1.01 }}
             className={cn(
               "w-full h-12 px-3 pr-12 rounded-xl border-2 bg-background transition-all duration-200",
               "focus:outline-none focus:ring-2 focus:ring-primary/20",
@@ -186,7 +184,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           <Search className="h-5 w-5" />
         </motion.div>
 
-        <motion.input
+        <input
           ref={ref}
           {...props}
           onFocus={(e) => {
@@ -197,7 +195,6 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             setIsFocused(false);
             props.onBlur?.(e);
           }}
-          whileFocus={{ scale: 1.01 }}
           className={cn(
             "w-full h-12 pl-11 pr-10 rounded-xl border-2 bg-background transition-all duration-200",
             "focus:outline-none focus:ring-2 focus:ring-primary/20",
@@ -351,7 +348,7 @@ export const AnimatedTextarea = forwardRef<HTMLTextAreaElement, AnimatedTextarea
           <label className="block text-sm font-medium mb-1.5">{label}</label>
         )}
 
-        <motion.textarea
+        <textarea
           ref={ref}
           {...props}
           onFocus={(e) => {
@@ -362,7 +359,6 @@ export const AnimatedTextarea = forwardRef<HTMLTextAreaElement, AnimatedTextarea
             setIsFocused(false);
             props.onBlur?.(e);
           }}
-          whileFocus={{ scale: 1.005 }}
           className={cn(
             "w-full min-h-[120px] px-4 py-3 rounded-xl border-2 bg-background transition-all duration-200 resize-none",
             "focus:outline-none focus:ring-2 focus:ring-primary/20",
