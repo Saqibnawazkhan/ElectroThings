@@ -56,8 +56,8 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: MapPin, text: "123 Tech Street, Silicon Valley, CA" },
-  { icon: Phone, text: "+1 (555) 123-4567" },
+  { icon: MapPin, text: "Shah Jee Boys Hostel, CUST University, Sihala Islamabad" },
+  { icon: Phone, text: "+92 309 9865055" },
   { icon: Clock, text: "Mon-Fri: 9AM - 6PM" },
 ];
 
