@@ -44,32 +44,19 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
     },
     ref
   ) => {
-    const Card = hover3D ? motion.div : "div";
+    const commonProps = {
+      ref,
+      className: cn(
+        "relative rounded-2xl overflow-hidden",
+        blurLevels[blur],
+        variants[variant],
+        border && "border border-white/20 dark:border-white/10",
+        className
+      ),
+    };
 
-    return (
-      <Card
-        ref={ref}
-        {...(hover3D
-          ? {
-              whileHover: {
-                y: -5,
-                rotateX: 5,
-                rotateY: 5,
-                scale: 1.02,
-              },
-              transition: { type: "spring", stiffness: 300, damping: 20 },
-              style: { transformStyle: "preserve-3d", perspective: 1000 },
-            }
-          : {})}
-        className={cn(
-          "relative rounded-2xl overflow-hidden",
-          blurLevels[blur],
-          variants[variant],
-          border && "border border-white/20 dark:border-white/10",
-          className
-        )}
-        {...props}
-      >
+    const content = (
+      <>
         {/* Glow effect */}
         {glow && (
           <div
@@ -83,7 +70,32 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
 
         {/* Content */}
         <div className="relative z-10">{children}</div>
-      </Card>
+      </>
+    );
+
+    if (hover3D) {
+      return (
+        <motion.div
+          {...commonProps}
+          whileHover={{
+            y: -5,
+            rotateX: 5,
+            rotateY: 5,
+            scale: 1.02,
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          style={{ transformStyle: "preserve-3d", perspective: 1000 }}
+          {...props}
+        >
+          {content}
+        </motion.div>
+      );
+    }
+
+    return (
+      <div {...commonProps} {...props}>
+        {content}
+      </div>
     );
   }
 );
