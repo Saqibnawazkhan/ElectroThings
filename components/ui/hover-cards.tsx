@@ -423,3 +423,208 @@ export function ShimmerCard({ children, className }: ShimmerCardProps) {
     </div>
   );
 }
+
+// Image zoom card
+interface ZoomImageCardProps {
+  children: ReactNode;
+  className?: string;
+  zoomScale?: number;
+}
+
+export function ZoomImageCard({
+  children,
+  className,
+  zoomScale = 1.1,
+}: ZoomImageCardProps) {
+  return (
+    <div className={cn("relative overflow-hidden rounded-2xl group", className)}>
+      <motion.div
+        whileHover={{ scale: zoomScale }}
+        transition={{ duration: 0.4 }}
+        className="h-full"
+      >
+        {children}
+      </motion.div>
+    </div>
+  );
+}
+
+// Tilt card with 3D effect
+interface TiltCardProps {
+  children: ReactNode;
+  className?: string;
+  maxTilt?: number;
+}
+
+export function TiltCard({
+  children,
+  className,
+  maxTilt = 15,
+}: TiltCardProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseXSpring = useSpring(x);
+  const mouseYSpring = useSpring(y);
+
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [`${maxTilt}deg`, `-${maxTilt}deg`]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [`-${maxTilt}deg`, `${maxTilt}deg`]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return;
+
+    const rect = ref.current.getBoundingClientRect();
+    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
+    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
+
+    x.set(xPct);
+    y.set(yPct);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        transformStyle: "preserve-3d",
+        rotateX,
+        rotateY,
+      }}
+      className={cn(
+        "relative rounded-2xl bg-background border border-border/50",
+        className
+      )}
+    >
+      <div style={{ transform: "translateZ(50px)" }}>{children}</div>
+    </motion.div>
+  );
+}
+
+// Glow card on hover
+interface GlowCardProps {
+  children: ReactNode;
+  className?: string;
+  glowColor?: string;
+}
+
+export function GlowCard({
+  children,
+  className,
+  glowColor = "rgba(59, 130, 246, 0.5)",
+}: GlowCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={cn("relative rounded-2xl", className)}
+    >
+      {/* Glow */}
+      <motion.div
+        className="absolute -inset-1 rounded-2xl blur-lg"
+        style={{ backgroundColor: glowColor }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isHovered ? 0.6 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
+
+      {/* Card */}
+      <div className="relative rounded-2xl bg-background border border-border/50 overflow-hidden">
+        {children}
+      </div>
+    </motion.div>
+  );
+}
+
+// Slide up overlay card
+interface SlideUpCardProps {
+  image: ReactNode;
+  title: string;
+  description?: string;
+  className?: string;
+}
+
+export function SlideUpCard({
+  image,
+  title,
+  description,
+  className,
+}: SlideUpCardProps) {
+  return (
+    <motion.div
+      whileHover="hover"
+      className={cn(
+        "relative rounded-2xl overflow-hidden bg-background border border-border/50",
+        className
+      )}
+    >
+      {/* Image */}
+      <div className="aspect-square overflow-hidden">{image}</div>
+
+      {/* Sliding content */}
+      <motion.div
+        variants={{
+          hover: { y: 0 },
+        }}
+        initial={{ y: "100%" }}
+        className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6"
+      >
+        <h3 className="text-lg font-semibold text-white">{title}</h3>
+        {description && (
+          <p className="text-sm text-white/80 mt-1">{description}</p>
+        )}
+      </motion.div>
+    </motion.div>
+  );
+}
+
+// Border animate card
+interface BorderAnimateCardProps {
+  children: ReactNode;
+  className?: string;
+}
+
+export function BorderAnimateCard({
+  children,
+  className,
+}: BorderAnimateCardProps) {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={cn("relative p-[2px] rounded-2xl", className)}
+    >
+      {/* Animated gradient border */}
+      <motion.div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary via-purple-500 to-pink-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      />
+
+      {/* Static border when not hovered */}
+      <div
+        className={cn(
+          "absolute inset-0 rounded-2xl border border-border/50 transition-opacity duration-300",
+          isHovered && "opacity-0"
+        )}
+      />
+
+      {/* Content */}
+      <div className="relative bg-background rounded-[14px] overflow-hidden">
+        {children}
+      </div>
+    </motion.div>
+  );
+}
