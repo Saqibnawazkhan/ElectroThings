@@ -49,10 +49,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#", color: "hover:bg-blue-600" },
-  { name: "Twitter", icon: Twitter, href: "#", color: "hover:bg-sky-500" },
-  { name: "Instagram", icon: Instagram, href: "#", color: "hover:bg-pink-600" },
-  { name: "YouTube", icon: Youtube, href: "#", color: "hover:bg-red-600" },
+  { name: "Facebook", icon: Facebook, href: "#", color: "hover:bg-blue-600", gradient: "from-blue-500 to-blue-700" },
+  { name: "Twitter", icon: Twitter, href: "#", color: "hover:bg-sky-500", gradient: "from-sky-400 to-sky-600" },
+  { name: "Instagram", icon: Instagram, href: "#", color: "hover:bg-pink-600", gradient: "from-pink-500 to-purple-600" },
+  { name: "YouTube", icon: Youtube, href: "#", color: "hover:bg-red-600", gradient: "from-red-500 to-red-700" },
 ];
 
 const contactInfo = [
@@ -342,16 +342,26 @@ export function Footer() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.2, y: -5 }}
-                  whileTap={{ scale: 0.9 }}
+                  className="relative group"
                 >
-                  <Link
-                    href={social.href}
-                    className={`flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800/50 text-slate-400 hover:text-white transition-all duration-300 border border-slate-700/50 hover:border-transparent ${social.color}`}
-                    aria-label={social.name}
+                  {/* Glow effect */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileHover={{ opacity: 0.5, scale: 1.2 }}
+                    className={`absolute inset-0 rounded-xl bg-gradient-to-r ${social.gradient} blur-lg transition-all`}
+                  />
+                  <motion.div
+                    whileHover={{ scale: 1.15, y: -5, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
                   >
-                    <social.icon className="h-5 w-5" />
-                  </Link>
+                    <Link
+                      href={social.href}
+                      className={`relative flex items-center justify-center w-11 h-11 rounded-xl bg-slate-800/50 text-slate-400 hover:text-white transition-all duration-300 border border-slate-700/50 hover:border-transparent ${social.color}`}
+                      aria-label={social.name}
+                    >
+                      <social.icon className="h-5 w-5" />
+                    </Link>
+                  </motion.div>
                 </motion.div>
               ))}
             </div>
