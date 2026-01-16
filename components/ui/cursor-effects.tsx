@@ -244,3 +244,129 @@ export function RippleEffect({ className }: { className?: string }) {
     </div>
   );
 }
+
+// Cursor glow trail effect
+export function CursorGlowTrail() {
+  const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  const lastPosition = useRef({ x: 0, y: 0 });
+  const animationFrame = useRef<number | undefined>(undefined);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const dx = e.clientX - lastPosition.current.x;
+      const dy = e.clientY - lastPosition.current.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance > 15) {
+        lastPosition.current = { x: e.clientX, y: e.clientY };
+        setTrail((prev) => [
+          ...prev.slice(-15),
+          { x: e.clientX, y: e.clientY, id: Date.now() },
+        ]);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (animationFrame.current) {
+        cancelAnimationFrame(animationFrame.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const cleanup = setInterval(() => {
+      setTrail((prev) => prev.filter((p) => Date.now() - p.id < 500));
+    }, 50);
+    return () => clearInterval(cleanup);
+  }, []);
+
+  return (
+    <div className="fixed inset-0 pointer-events-none z-[9996] hidden lg:block">
+      {trail.map((point, index) => {
+        const age = Date.now() - point.id;
+        const opacity = Math.max(0, 1 - age / 500) * 0.3;
+        const scale = Math.max(0.1, 1 - age / 500);
+
+        return (
+          <motion.div
+            key={point.id}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale, opacity }}
+            className="absolute w-4 h-4 -translate-x-1/2 -translate-y-1/2 rounded-full"
+            style={{
+              left: point.x,
+              top: point.y,
+              background: `radial-gradient(circle, hsl(var(--primary) / ${opacity}), transparent)`,
+              filter: "blur(2px)",
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
+// Interactive hover card glow
+export function HoverGlowCard({
+  children,
+  className,
+  glowColor = "hsl(var(--primary))",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  glowColor?: string;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    setPosition({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+    });
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className={`relative overflow-hidden rounded-xl ${className}`}
+      whileHover={{ scale: 1.02 }}
+      transition={{ duration: 0.2 }}
+    >
+      {/* Glow effect */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-0"
+        animate={{
+          opacity: isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        style={{
+          background: `radial-gradient(300px circle at ${position.x}px ${position.y}px, ${glowColor} / 0.15, transparent 60%)`,
+        }}
+      />
+      {/* Border glow */}
+      <motion.div
+        className="pointer-events-none absolute inset-0 z-0 rounded-xl"
+        animate={{
+          opacity: isHovered ? 1 : 0,
+        }}
+        transition={{ duration: 0.3 }}
+        style={{
+          background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${glowColor} / 0.3, transparent 40%)`,
+          mask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          maskComposite: "exclude",
+          padding: "1px",
+        }}
+      />
+      <div className="relative z-10">{children}</div>
+    </motion.div>
+  );
+}
