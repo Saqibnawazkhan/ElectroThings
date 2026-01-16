@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronRight, Home } from "lucide-react";
+import { motion } from "framer-motion";
+import { ChevronRight, Home, Sparkles } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface BreadcrumbItem {
   label: string;
@@ -12,9 +14,10 @@ interface BreadcrumbItem {
 interface BreadcrumbsProps {
   items?: BreadcrumbItem[];
   showHome?: boolean;
+  className?: string;
 }
 
-export function Breadcrumbs({ items, showHome = true }: BreadcrumbsProps) {
+export function Breadcrumbs({ items, showHome = true, className }: BreadcrumbsProps) {
   const pathname = usePathname();
 
   // Auto-generate breadcrumbs from pathname if no items provided
@@ -23,38 +26,73 @@ export function Breadcrumbs({ items, showHome = true }: BreadcrumbsProps) {
   if (breadcrumbs.length === 0 && !showHome) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className="mb-6">
-      <ol className="flex items-center flex-wrap gap-1.5 text-sm text-muted-foreground">
+    <nav aria-label="Breadcrumb" className={cn("mb-6", className)}>
+      <motion.ol
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        className="flex items-center flex-wrap gap-1 text-sm"
+      >
         {showHome && (
-          <li className="flex items-center">
+          <motion.li
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0 }}
+            className="flex items-center"
+          >
             <Link
               href="/"
-              className="hover:text-foreground transition-colors flex items-center gap-1"
+              className="group flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-muted/50 hover:bg-primary/10 transition-all duration-200"
             >
-              <Home className="h-3.5 w-3.5" />
-              <span className="sr-only sm:not-sr-only">Home</span>
+              <motion.div
+                whileHover={{ rotate: [0, -10, 10, 0], scale: 1.1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Home className="h-3.5 w-3.5 group-hover:text-primary transition-colors" />
+              </motion.div>
+              <span className="sr-only sm:not-sr-only text-muted-foreground group-hover:text-primary transition-colors">
+                Home
+              </span>
             </Link>
-          </li>
+          </motion.li>
         )}
 
         {breadcrumbs.map((item, index) => (
-          <li key={item.href} className="flex items-center">
-            <ChevronRight className="h-4 w-4 mx-1 flex-shrink-0" />
+          <motion.li
+            key={item.href}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: (index + 1) * 0.05 }}
+            className="flex items-center"
+          >
+            <motion.div
+              animate={{ x: [0, 2, 0] }}
+              transition={{ duration: 1, repeat: Infinity, repeatDelay: 2 }}
+            >
+              <ChevronRight className="h-4 w-4 mx-1 text-muted-foreground/50" />
+            </motion.div>
             {index === breadcrumbs.length - 1 ? (
-              <span className="font-medium text-foreground truncate max-w-[200px]">
-                {item.label}
-              </span>
-            ) : (
-              <Link
-                href={item.href}
-                className="hover:text-foreground transition-colors truncate max-w-[150px]"
+              <motion.span
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-primary/10 to-purple-500/10 font-medium text-foreground truncate max-w-[200px]"
+                whileHover={{ scale: 1.02 }}
               >
+                <Sparkles className="h-3 w-3 text-primary" />
                 {item.label}
+              </motion.span>
+            ) : (
+              <Link href={item.href}>
+                <motion.span
+                  className="px-2.5 py-1 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/5 transition-all duration-200 truncate max-w-[150px] inline-block"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  {item.label}
+                </motion.span>
               </Link>
             )}
-          </li>
+          </motion.li>
         ))}
-      </ol>
+      </motion.ol>
     </nav>
   );
 }
