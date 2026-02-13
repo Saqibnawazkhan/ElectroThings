@@ -1,0 +1,933 @@
+[
+  {
+    "id": "prod-1",
+    "name": "iPhone 15 Pro Max",
+    "slug": "iphone-15-pro-max",
+    "description": "The most advanced iPhone ever with A17 Pro chip, titanium design, and a powerful 48MP camera system. Features Dynamic Island and always-on display.",
+    "price": 1199,
+    "originalPrice": 1299,
+    "images": [
+      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 50,
+    "rating": 4.8,
+    "reviewCount": 324,
+    "featured": true,
+    "specifications": {
+      "Display": "6.7-inch Super Retina XDR",
+      "Chip": "A17 Pro",
+      "Storage": "256GB",
+      "Camera": "48MP Main + 12MP Ultra Wide + 12MP Telephoto"
+    },
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "id": "prod-2",
+    "name": "Samsung Galaxy S24 Ultra",
+    "slug": "samsung-galaxy-s24-ultra",
+    "description": "Galaxy AI is here. The ultimate smartphone experience with built-in S Pen, 200MP camera, and Galaxy AI features for enhanced productivity.",
+    "price": 1299,
+    "images": [
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 256,
+    "featured": true,
+    "specifications": {
+      "Display": "6.8-inch QHD+ Dynamic AMOLED",
+      "Chip": "Snapdragon 8 Gen 3",
+      "Storage": "256GB",
+      "Camera": "200MP Main + 12MP Ultra Wide + 50MP Telephoto"
+    },
+    "createdAt": "2024-01-20T10:00:00Z"
+  },
+  {
+    "id": "prod-3",
+    "name": "MacBook Pro 14\" M3 Pro",
+    "slug": "macbook-pro-14-m3-pro",
+    "description": "Supercharged by M3 Pro chip. The most advanced MacBook Pro ever for demanding workflows like video editing and software development.",
+    "price": 1999,
+    "originalPrice": 2199,
+    "images": [
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 20,
+    "rating": 4.9,
+    "reviewCount": 189,
+    "featured": true,
+    "specifications": {
+      "Display": "14.2-inch Liquid Retina XDR",
+      "Chip": "Apple M3 Pro",
+      "Memory": "18GB Unified",
+      "Storage": "512GB SSD"
+    },
+    "createdAt": "2024-01-10T10:00:00Z"
+  },
+  {
+    "id": "prod-4",
+    "name": "iPad Pro 12.9\" M2",
+    "slug": "ipad-pro-12-9-m2",
+    "description": "The ultimate iPad experience with M2 chip, stunning Liquid Retina XDR display, and Apple Pencil hover feature.",
+    "price": 1099,
+    "images": [
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 30,
+    "rating": 4.8,
+    "reviewCount": 145,
+    "featured": false,
+    "specifications": {
+      "Display": "12.9-inch Liquid Retina XDR",
+      "Chip": "Apple M2",
+      "Storage": "256GB",
+      "Connectivity": "Wi-Fi 6E + 5G"
+    },
+    "createdAt": "2024-01-05T10:00:00Z"
+  },
+  {
+    "id": "prod-5",
+    "name": "Dell XPS 15",
+    "slug": "dell-xps-15",
+    "description": "Premium 15.6-inch laptop with InfinityEdge display, Intel Core i7, and NVIDIA GeForce RTX graphics.",
+    "price": 1499,
+    "images": [
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 25,
+    "rating": 4.6,
+    "reviewCount": 98,
+    "featured": false,
+    "specifications": {
+      "Display": "15.6-inch OLED 3.5K",
+      "Processor": "Intel Core i7-13700H",
+      "Memory": "16GB DDR5",
+      "Storage": "512GB SSD"
+    },
+    "createdAt": "2024-01-08T10:00:00Z"
+  },
+  {
+    "id": "prod-6",
+    "name": "Google Pixel 8 Pro",
+    "slug": "google-pixel-8-pro",
+    "description": "The best of Google AI in a smartphone. Features Tensor G3 chip, Magic Eraser, and 7 years of OS updates.",
+    "price": 999,
+    "images": [
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 40,
+    "rating": 4.5,
+    "reviewCount": 167,
+    "featured": false,
+    "specifications": {
+      "Display": "6.7-inch LTPO OLED",
+      "Chip": "Google Tensor G3",
+      "Storage": "128GB",
+      "Camera": "50MP Main + 48MP Ultra Wide + 48MP Telephoto"
+    },
+    "createdAt": "2024-01-12T10:00:00Z"
+  },
+  {
+    "id": "prod-7",
+    "name": "Surface Pro 9",
+    "slug": "surface-pro-9",
+    "description": "The most powerful Surface Pro. 2-in-1 laptop and tablet with Intel or Microsoft SQ3 processor options.",
+    "price": 1099,
+    "images": [
+      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 15,
+    "rating": 4.4,
+    "reviewCount": 76,
+    "featured": false,
+    "specifications": {
+      "Display": "13-inch PixelSense",
+      "Processor": "Intel Core i5-1235U",
+      "Memory": "8GB",
+      "Storage": "256GB SSD"
+    },
+    "createdAt": "2024-01-18T10:00:00Z"
+  },
+  {
+    "id": "prod-8",
+    "name": "OnePlus 12",
+    "slug": "oneplus-12",
+    "description": "Flagship killer with Snapdragon 8 Gen 3, Hasselblad cameras, and 100W SUPERVOOC charging.",
+    "price": 799,
+    "images": [
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 45,
+    "rating": 4.6,
+    "reviewCount": 134,
+    "featured": false,
+    "specifications": {
+      "Display": "6.82-inch LTPO AMOLED",
+      "Chip": "Snapdragon 8 Gen 3",
+      "Storage": "256GB",
+      "Camera": "50MP Main + 48MP Ultra Wide + 64MP Telephoto"
+    },
+    "createdAt": "2024-01-22T10:00:00Z"
+  },
+  {
+    "id": "prod-9",
+    "name": "Sony WH-1000XM5",
+    "slug": "sony-wh-1000xm5",
+    "description": "Industry-leading noise cancellation headphones with exceptional sound quality and 30-hour battery life.",
+    "price": 349,
+    "originalPrice": 399,
+    "images": [
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 60,
+    "rating": 4.8,
+    "reviewCount": 456,
+    "featured": true,
+    "specifications": {
+      "Type": "Over-ear Wireless",
+      "Driver": "30mm",
+      "Battery": "30 hours",
+      "ANC": "Yes, with Auto NC Optimizer"
+    },
+    "createdAt": "2024-01-06T10:00:00Z"
+  },
+  {
+    "id": "prod-10",
+    "name": "AirPods Pro 2nd Gen",
+    "slug": "airpods-pro-2nd-gen",
+    "description": "Rebuilt from the ground up. Active Noise Cancellation, Adaptive Audio, and up to 2x more noise cancellation than the original.",
+    "price": 249,
+    "images": [
+      "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 100,
+    "rating": 4.7,
+    "reviewCount": 678,
+    "featured": true,
+    "specifications": {
+      "Type": "In-ear True Wireless",
+      "Chip": "H2",
+      "Battery": "6 hours (30 with case)",
+      "ANC": "Yes, 2x more powerful"
+    },
+    "createdAt": "2024-01-03T10:00:00Z"
+  },
+  {
+    "id": "prod-11",
+    "name": "Bose QuietComfort Ultra",
+    "slug": "bose-quietcomfort-ultra",
+    "description": "World-class noise cancellation meets immersive audio. CustomTune technology personalized to your ears.",
+    "price": 429,
+    "images": [
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 40,
+    "rating": 4.7,
+    "reviewCount": 234,
+    "featured": false,
+    "specifications": {
+      "Type": "Over-ear Wireless",
+      "Audio": "Bose Immersive Audio",
+      "Battery": "24 hours",
+      "ANC": "Yes, CustomTune"
+    },
+    "createdAt": "2024-01-11T10:00:00Z"
+  },
+  {
+    "id": "prod-12",
+    "name": "Sonos Era 300",
+    "slug": "sonos-era-300",
+    "description": "Premium smart speaker with spatial audio and Dolby Atmos support. Fill any room with stunning sound.",
+    "price": 449,
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 25,
+    "rating": 4.6,
+    "reviewCount": 89,
+    "featured": false,
+    "specifications": {
+      "Type": "Smart Speaker",
+      "Audio": "Dolby Atmos, Spatial Audio",
+      "Connectivity": "Wi-Fi, Bluetooth",
+      "Voice": "Alexa, Sonos Voice"
+    },
+    "createdAt": "2024-01-14T10:00:00Z"
+  },
+  {
+    "id": "prod-13",
+    "name": "JBL Flip 6",
+    "slug": "jbl-flip-6",
+    "description": "Portable Bluetooth speaker with powerful sound and IP67 waterproof rating. 12 hours of playtime.",
+    "price": 129,
+    "originalPrice": 149,
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 80,
+    "rating": 4.5,
+    "reviewCount": 345,
+    "featured": false,
+    "specifications": {
+      "Type": "Portable Bluetooth Speaker",
+      "Battery": "12 hours",
+      "Waterproof": "IP67",
+      "Driver": "2-way speaker system"
+    },
+    "createdAt": "2024-01-17T10:00:00Z"
+  },
+  {
+    "id": "prod-14",
+    "name": "PlayStation 5",
+    "slug": "playstation-5",
+    "description": "Experience lightning-fast loading, haptic feedback, adaptive triggers, and stunning 4K gaming.",
+    "price": 499,
+    "images": [
+      "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 10,
+    "rating": 4.9,
+    "reviewCount": 892,
+    "featured": true,
+    "specifications": {
+      "CPU": "AMD Zen 2, 8 cores",
+      "GPU": "AMD RDNA 2, 10.28 TFLOPs",
+      "Storage": "825GB SSD",
+      "Resolution": "Up to 8K"
+    },
+    "createdAt": "2024-01-02T10:00:00Z"
+  },
+  {
+    "id": "prod-15",
+    "name": "Xbox Series X",
+    "slug": "xbox-series-x",
+    "description": "The fastest, most powerful Xbox ever. 12 teraflops of processing power and 4K gaming at 60fps.",
+    "price": 499,
+    "images": [
+      "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 15,
+    "rating": 4.8,
+    "reviewCount": 654,
+    "featured": false,
+    "specifications": {
+      "CPU": "AMD Zen 2, 8 cores",
+      "GPU": "12 TFLOPs, RDNA 2",
+      "Storage": "1TB SSD",
+      "Resolution": "Up to 8K"
+    },
+    "createdAt": "2024-01-04T10:00:00Z"
+  },
+  {
+    "id": "prod-16",
+    "name": "Nintendo Switch OLED",
+    "slug": "nintendo-switch-oled",
+    "description": "Enhanced gaming with vibrant 7-inch OLED screen, wide adjustable stand, and 64GB internal storage.",
+    "price": 349,
+    "images": [
+      "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 523,
+    "featured": false,
+    "specifications": {
+      "Display": "7-inch OLED",
+      "Storage": "64GB",
+      "Battery": "4.5-9 hours",
+      "Resolution": "720p handheld, 1080p TV"
+    },
+    "createdAt": "2024-01-09T10:00:00Z"
+  },
+  {
+    "id": "prod-17",
+    "name": "DualSense Edge Controller",
+    "slug": "dualsense-edge-controller",
+    "description": "Ultra-customizable PlayStation controller with replaceable components and back buttons.",
+    "price": 199,
+    "images": [
+      "https://images.unsplash.com/photo-1592840331295-fac0f1e8e3db?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 20,
+    "rating": 4.5,
+    "reviewCount": 187,
+    "featured": false,
+    "specifications": {
+      "Compatibility": "PS5, PC",
+      "Features": "Back buttons, Adjustable triggers",
+      "Battery": "Built-in rechargeable",
+      "Connectivity": "USB-C, Bluetooth"
+    },
+    "createdAt": "2024-01-13T10:00:00Z"
+  },
+  {
+    "id": "prod-18",
+    "name": "Apple Watch Ultra 2",
+    "slug": "apple-watch-ultra-2",
+    "description": "The most rugged and capable Apple Watch. Built for athletes, adventurers, and explorers.",
+    "price": 799,
+    "images": [
+      "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&q=80"
+    ],
+    "category": "Wearables",
+    "categorySlug": "wearables",
+    "stock": 30,
+    "rating": 4.8,
+    "reviewCount": 234,
+    "featured": true,
+    "specifications": {
+      "Display": "49mm Always-On Retina",
+      "Chip": "S9 SiP",
+      "Battery": "36 hours",
+      "Water Resistance": "100m"
+    },
+    "createdAt": "2024-01-07T10:00:00Z"
+  },
+  {
+    "id": "prod-19",
+    "name": "Samsung Galaxy Watch 6 Classic",
+    "slug": "samsung-galaxy-watch-6-classic",
+    "description": "Premium smartwatch with rotating bezel, advanced health monitoring, and Wear OS.",
+    "price": 429,
+    "images": [
+      "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=800&q=80"
+    ],
+    "category": "Wearables",
+    "categorySlug": "wearables",
+    "stock": 40,
+    "rating": 4.6,
+    "reviewCount": 156,
+    "featured": false,
+    "specifications": {
+      "Display": "47mm Super AMOLED",
+      "OS": "Wear OS 4",
+      "Battery": "40+ hours",
+      "Health": "ECG, Blood Pressure, Sleep"
+    },
+    "createdAt": "2024-01-16T10:00:00Z"
+  },
+  {
+    "id": "prod-20",
+    "name": "Fitbit Charge 6",
+    "slug": "fitbit-charge-6",
+    "description": "Advanced fitness tracker with built-in GPS, heart rate monitoring, and 7-day battery life.",
+    "price": 159,
+    "originalPrice": 179,
+    "images": [
+      "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=800&q=80"
+    ],
+    "category": "Wearables",
+    "categorySlug": "wearables",
+    "stock": 55,
+    "rating": 4.4,
+    "reviewCount": 289,
+    "featured": false,
+    "specifications": {
+      "Display": "AMOLED touchscreen",
+      "GPS": "Built-in",
+      "Battery": "7 days",
+      "Health": "Heart rate, SpO2, Sleep"
+    },
+    "createdAt": "2024-01-19T10:00:00Z"
+  },
+  {
+    "id": "prod-21",
+    "name": "Garmin Fenix 7X Pro",
+    "slug": "garmin-fenix-7x-pro",
+    "description": "Ultimate multisport GPS smartwatch with solar charging, flashlight, and advanced training features.",
+    "price": 899,
+    "images": [
+      "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=800&q=80"
+    ],
+    "category": "Wearables",
+    "categorySlug": "wearables",
+    "stock": 12,
+    "rating": 4.8,
+    "reviewCount": 145,
+    "featured": false,
+    "specifications": {
+      "Display": "1.4-inch MIP",
+      "Battery": "28 days (37 with solar)",
+      "GPS": "Multi-band GNSS",
+      "Features": "Flashlight, Maps, Music"
+    },
+    "createdAt": "2024-01-21T10:00:00Z"
+  },
+  {
+    "id": "prod-22",
+    "name": "Anker 737 Power Bank",
+    "slug": "anker-737-power-bank",
+    "description": "24,000mAh portable charger with 140W output. Charge laptops and phones simultaneously.",
+    "price": 149,
+    "images": [
+      "https://images.unsplash.com/photo-1609592094485-4a42d3610a44?w=800&q=80"
+    ],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 70,
+    "rating": 4.7,
+    "reviewCount": 423,
+    "featured": false,
+    "specifications": {
+      "Capacity": "24,000mAh",
+      "Output": "140W max",
+      "Ports": "2 USB-C, 1 USB-A",
+      "Display": "Smart digital display"
+    },
+    "createdAt": "2024-01-23T10:00:00Z"
+  },
+  {
+    "id": "prod-23",
+    "name": "Apple MagSafe Charger",
+    "slug": "apple-magsafe-charger",
+    "description": "Wireless charger that perfectly aligns with iPhone 12 and later for faster wireless charging.",
+    "price": 39,
+    "images": [
+      "https://images.unsplash.com/photo-1591290619762-c58b8de44b9a?w=800&q=80"
+    ],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 150,
+    "rating": 4.5,
+    "reviewCount": 567,
+    "featured": false,
+    "specifications": {
+      "Compatibility": "iPhone 12+, AirPods",
+      "Output": "15W (iPhone), 5W (AirPods)",
+      "Cable Length": "1m",
+      "Connector": "USB-C"
+    },
+    "createdAt": "2024-01-24T10:00:00Z"
+  },
+  {
+    "id": "prod-24",
+    "name": "Samsung 45W USB-C Charger",
+    "slug": "samsung-45w-charger",
+    "description": "Super fast charger for Galaxy phones and tablets. Compact design with folding prongs.",
+    "price": 49,
+    "originalPrice": 59,
+    "images": [
+      "https://images.unsplash.com/photo-1591290619762-c58b8de44b9a?w=800&q=80"
+    ],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 90,
+    "rating": 4.6,
+    "reviewCount": 234,
+    "featured": false,
+    "specifications": {
+      "Output": "45W USB-C PD",
+      "Compatibility": "Universal USB-C",
+      "Design": "Compact, folding prongs",
+      "Cable": "Not included"
+    },
+    "createdAt": "2024-01-25T10:00:00Z"
+  },
+  {
+    "id": "prod-25",
+    "name": "Spigen Tough Armor Case",
+    "slug": "spigen-tough-armor-case",
+    "description": "Military-grade protection for iPhone 15 Pro with kickstand. Dual-layer design for extreme durability.",
+    "price": 29,
+    "images": [
+      "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=800&q=80"
+    ],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 200,
+    "rating": 4.4,
+    "reviewCount": 789,
+    "featured": false,
+    "specifications": {
+      "Compatibility": "iPhone 15 Pro",
+      "Protection": "MIL-STD 810G",
+      "Features": "Kickstand, Air Cushion Tech",
+      "Material": "TPU + Polycarbonate"
+    },
+    "createdAt": "2024-01-26T10:00:00Z"
+  },
+  {
+    "id": "prod-26",
+    "name": "Razer BlackWidow V4 Pro",
+    "slug": "razer-blackwidow-v4-pro",
+    "description": "Premium mechanical gaming keyboard with RGB underglow, Command Dial, and Green Mechanical Switches.",
+    "price": 229,
+    "originalPrice": 259,
+    "images": [
+      "https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 312,
+    "featured": true,
+    "specifications": {
+      "Switches": "Razer Green Mechanical",
+      "Lighting": "Razer Chroma RGB",
+      "Features": "Command Dial, Media Keys",
+      "Connectivity": "USB-C, USB Passthrough"
+    },
+    "createdAt": "2024-01-27T10:00:00Z"
+  },
+  {
+    "id": "prod-27",
+    "name": "Logitech G Pro X Superlight 2",
+    "slug": "logitech-gpro-superlight-2",
+    "description": "Ultra-lightweight wireless gaming mouse at only 60g. HERO 2 sensor with 32K DPI tracking.",
+    "price": 159,
+    "images": [
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 50,
+    "rating": 4.9,
+    "reviewCount": 456,
+    "featured": true,
+    "specifications": {
+      "Sensor": "HERO 2 - 32,000 DPI",
+      "Weight": "60g",
+      "Battery": "95 hours",
+      "Connectivity": "LIGHTSPEED Wireless"
+    },
+    "createdAt": "2024-01-28T10:00:00Z"
+  },
+  {
+    "id": "prod-28",
+    "name": "ASUS ROG Swift PG27AQN",
+    "slug": "asus-rog-swift-pg27aqn",
+    "description": "27-inch 360Hz IPS gaming monitor with 1ms response time. NVIDIA G-SYNC and HDR600.",
+    "price": 999,
+    "images": [
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 15,
+    "rating": 4.8,
+    "reviewCount": 178,
+    "featured": false,
+    "specifications": {
+      "Display": "27-inch 1440p IPS",
+      "Refresh Rate": "360Hz",
+      "Response Time": "1ms GTG",
+      "Features": "G-SYNC, HDR600"
+    },
+    "createdAt": "2024-01-29T10:00:00Z"
+  },
+  {
+    "id": "prod-29",
+    "name": "SteelSeries Arctis Nova Pro",
+    "slug": "steelseries-arctis-nova-pro",
+    "description": "Premium wireless gaming headset with active noise cancellation and hot-swappable batteries.",
+    "price": 349,
+    "originalPrice": 399,
+    "images": [
+      "https://images.unsplash.com/photo-1599669454699-248893623440?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 28,
+    "rating": 4.7,
+    "reviewCount": 234,
+    "featured": false,
+    "specifications": {
+      "Driver": "40mm Neodymium",
+      "ANC": "4-mic Hybrid",
+      "Battery": "Hot-swappable, 22hrs each",
+      "Audio": "360° Spatial, Hi-Res"
+    },
+    "createdAt": "2024-01-30T10:00:00Z"
+  },
+  {
+    "id": "prod-30",
+    "name": "LG C3 65\" OLED TV",
+    "slug": "lg-c3-65-oled",
+    "description": "Self-lit OLED pixels for perfect blacks. α9 AI Processor Gen6 with Dolby Vision and Dolby Atmos.",
+    "price": 1799,
+    "originalPrice": 2099,
+    "images": [
+      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 12,
+    "rating": 4.9,
+    "reviewCount": 567,
+    "featured": true,
+    "specifications": {
+      "Display": "65-inch OLED evo",
+      "Resolution": "4K UHD (3840x2160)",
+      "Processor": "α9 AI Gen6",
+      "Features": "Dolby Vision, G-SYNC, FreeSync"
+    },
+    "createdAt": "2024-02-01T10:00:00Z"
+  },
+  {
+    "id": "prod-31",
+    "name": "DJI Mini 4 Pro",
+    "slug": "dji-mini-4-pro",
+    "description": "Under 249g drone with 4K/60fps video, omnidirectional obstacle sensing, and 34-min flight time.",
+    "price": 759,
+    "images": [
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 25,
+    "rating": 4.8,
+    "reviewCount": 345,
+    "featured": true,
+    "specifications": {
+      "Camera": "1/1.3-inch CMOS, 4K/60fps",
+      "Weight": "249g",
+      "Flight Time": "34 minutes",
+      "Range": "20km (FCC)"
+    },
+    "createdAt": "2024-02-02T10:00:00Z"
+  },
+  {
+    "id": "prod-32",
+    "name": "GoPro HERO12 Black",
+    "slug": "gopro-hero12-black",
+    "description": "Waterproof action camera with 5.3K video, HyperSmooth 6.0 stabilization, and HDR photo/video.",
+    "price": 399,
+    "images": [
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 45,
+    "rating": 4.6,
+    "reviewCount": 423,
+    "featured": false,
+    "specifications": {
+      "Video": "5.3K60, 4K120",
+      "Waterproof": "33ft (10m)",
+      "Stabilization": "HyperSmooth 6.0",
+      "Features": "HDR, 27MP Photos"
+    },
+    "createdAt": "2024-02-03T10:00:00Z"
+  },
+  {
+    "id": "prod-33",
+    "name": "Kindle Scribe",
+    "slug": "kindle-scribe",
+    "description": "10.2-inch 300ppi Paperwhite display with included Premium Pen. Read and write like paper.",
+    "price": 339,
+    "images": [
+      "https://images.unsplash.com/photo-1592496001020-d31bd830651f?w=800&q=80"
+    ],
+    "category": "Electronics",
+    "categorySlug": "electronics",
+    "stock": 55,
+    "rating": 4.5,
+    "reviewCount": 289,
+    "featured": false,
+    "specifications": {
+      "Display": "10.2-inch Paperwhite",
+      "Resolution": "300 ppi",
+      "Storage": "16GB",
+      "Pen": "Premium Pen included"
+    },
+    "createdAt": "2024-02-04T10:00:00Z"
+  },
+  {
+    "id": "prod-34",
+    "name": "Meta Quest 3",
+    "slug": "meta-quest-3",
+    "description": "Next-gen mixed reality headset with full-color passthrough and Snapdragon XR2 Gen 2 processor.",
+    "price": 499,
+    "images": [
+      "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?w=800&q=80"
+    ],
+    "category": "Gaming",
+    "categorySlug": "gaming",
+    "stock": 30,
+    "rating": 4.7,
+    "reviewCount": 512,
+    "featured": true,
+    "specifications": {
+      "Display": "2064x2208 per eye LCD",
+      "Processor": "Snapdragon XR2 Gen 2",
+      "Storage": "128GB",
+      "Features": "Mixed Reality, Hand Tracking"
+    },
+    "createdAt": "2024-02-05T10:00:00Z"
+  },
+  {
+    "id": "prod-35",
+    "name": "Sennheiser Momentum 4",
+    "slug": "sennheiser-momentum-4",
+    "description": "Wireless headphones with exceptional sound, adaptive noise cancellation, and 60-hour battery.",
+    "price": 379,
+    "images": [
+      "https://images.unsplash.com/photo-1545127398-14699f92334b?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 35,
+    "rating": 4.7,
+    "reviewCount": 267,
+    "featured": false,
+    "specifications": {
+      "Driver": "42mm",
+      "Battery": "60 hours",
+      "ANC": "Adaptive",
+      "Codec": "aptX Adaptive, AAC, SBC"
+    },
+    "createdAt": "2024-02-06T10:00:00Z"
+  },
+  {
+    "id": "prod-36",
+    "name": "Marshall Emberton II",
+    "slug": "marshall-emberton-ii",
+    "description": "Portable Bluetooth speaker with iconic Marshall design. 30+ hours playtime and IP67 rating.",
+    "price": 169,
+    "images": [
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 60,
+    "rating": 4.6,
+    "reviewCount": 345,
+    "featured": false,
+    "specifications": {
+      "Type": "Portable Bluetooth",
+      "Battery": "30+ hours",
+      "Waterproof": "IP67",
+      "Driver": "Full-range 10W x2"
+    },
+    "createdAt": "2024-02-07T10:00:00Z"
+  },
+  {
+    "id": "prod-37",
+    "name": "Oura Ring Gen 3",
+    "slug": "oura-ring-gen-3",
+    "description": "Smart ring for health tracking. Measures sleep, activity, heart rate, and body temperature.",
+    "price": 299,
+    "images": [
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80"
+    ],
+    "category": "Wearables",
+    "categorySlug": "wearables",
+    "stock": 40,
+    "rating": 4.5,
+    "reviewCount": 234,
+    "featured": false,
+    "specifications": {
+      "Sensors": "Heart rate, Temperature, SpO2",
+      "Battery": "Up to 7 days",
+      "Water Resistance": "100m",
+      "Material": "Titanium"
+    },
+    "createdAt": "2024-02-08T10:00:00Z"
+  },
+  {
+    "id": "prod-38",
+    "name": "Anker Soundcore Space Q45",
+    "slug": "anker-soundcore-space-q45",
+    "description": "Wireless headphones with adaptive ANC, LDAC Hi-Res, and 50-hour battery life.",
+    "price": 149,
+    "originalPrice": 179,
+    "images": [
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&q=80"
+    ],
+    "category": "Audio",
+    "categorySlug": "audio",
+    "stock": 70,
+    "rating": 4.5,
+    "reviewCount": 456,
+    "featured": false,
+    "specifications": {
+      "Driver": "40mm",
+      "Battery": "50 hours (ANC on)",
+      "ANC": "Adaptive",
+      "Codec": "LDAC, AAC, SBC"
+    },
+    "createdAt": "2024-02-09T10:00:00Z"
+  },
+  {
+    "id": "prod-39",
+    "name": "Belkin 3-in-1 MagSafe Charger",
+    "slug": "belkin-3in1-magsafe",
+    "description": "Wireless charging stand for iPhone, Apple Watch, and AirPods. Fast 15W iPhone charging.",
+    "price": 149,
+    "images": [
+      "https://images.unsplash.com/photo-1591290619762-c58b8de44b9a?w=800&q=80"
+    ],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 85,
+    "rating": 4.6,
+    "reviewCount": 378,
+    "featured": false,
+    "specifications": {
+      "iPhone Charging": "15W MagSafe",
+      "Watch Charging": "Fast charge compatible",
+      "Compatibility": "iPhone 12+, Apple Watch, AirPods",
+      "Design": "Premium metal + leather"
+    },
+    "createdAt": "2024-02-10T10:00:00Z"
+  },
+  {
+    "id": "prod-40",
+    "name": "Thunderbolt 4 Dock",
+    "slug": "thunderbolt-4-dock",
+    "description": "Universal docking station with 15 ports. Supports dual 4K displays and 96W laptop charging.",
+    "price": 379,
+    "originalPrice": 429,
+    "images": [
+      "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=800&q=80"
+    ],
+    "category": "Accessories",
+    "categorySlug": "accessories",
+    "stock": 30,
+    "rating": 4.7,
+    "reviewCount": 189,
+    "featured": false,
+    "specifications": {
+      "Ports": "15 total (4x USB-A, 2x TB4, HDMI, SD)",
+      "Display": "Dual 4K @ 60Hz",
+      "Power Delivery": "96W",
+      "Compatibility": "Mac, Windows, Chromebook"
+    },
+    "createdAt": "2024-02-11T10:00:00Z"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "cat-1",
+    "name": "Electronics",
+    "slug": "electronics",
+    "description": "Latest smartphones, tablets, and laptops",
+    "image": "/images/categories/electronics.jpg",
+    "productCount": 8
+  },
+  {
+    "id": "cat-2",
+    "name": "Audio",
+    "slug": "audio",
+    "description": "Premium headphones, speakers, and audio equipment",
+    "image": "/images/categories/audio.jpg",
+    "productCount": 5
+  },
+  {
+    "id": "cat-3",
+    "name": "Gaming",
+    "slug": "gaming",
+    "description": "Gaming consoles, controllers, and accessories",
+    "image": "/images/categories/gaming.jpg",
+    "productCount": 4
+  },
+  {
+    "id": "cat-4",
+    "name": "Wearables",
+    "slug": "wearables",
+    "description": "Smartwatches, fitness trackers, and smart glasses",
+    "image": "/images/categories/wearables.jpg",
+    "productCount": 4
+  },
+  {
+    "id": "cat-5",
+    "name": "Accessories",
+    "slug": "accessories",
+    "description": "Cables, chargers, cases, and more",
+    "image": "/images/categories/accessories.jpg",
+    "productCount": 4
+  }
+]
