@@ -19,6 +19,7 @@ declare module "next-auth" {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  secret: process.env.NEXTAUTH_SECRET || "your-super-secret-key-change-this-in-production",
   providers: [
     Credentials({
       name: "credentials",
@@ -72,4 +73,6 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   session: {
     strategy: "jwt",
   },
+  trustHost: true,
+  debug: process.env.NODE_ENV === "development",
 });
